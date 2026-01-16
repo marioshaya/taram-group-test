@@ -29,8 +29,8 @@ export default function Home() {
           </p>
 
           <div className="">
-            <button type="button">Prendre RDV</button>
-            <button type="button">Découvrir nos projets</button>
+            <button className="rounded-xl px-4 py-2" type="button">Prendre RDV</button>
+            <button className="rounded-xl px-4 py-2" type="button">Découvrir nos projets</button>
           </div>
         </div>
       </div>
