@@ -2,9 +2,9 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { MdMenu } from "react-icons/md"
-import { FaCalendarAlt } from "react-icons/fa"
 import { useState } from "react"
+import { FaCalendarAlt } from "react-icons/fa"
+import { MdMenu } from "react-icons/md"
 import MenuMobile from "./MenuMobile"
 
 export default function Navbar() {

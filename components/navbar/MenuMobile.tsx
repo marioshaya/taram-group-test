@@ -37,13 +37,13 @@ const MenuMobile = ({ onClick }: MenuMobileProps) => {
 
   return (
     <div className="bg-primary absolute top-0 left-0 z-40 mx-auto flex h-dvh w-full flex-col items-center justify-between pb-4">
-      <div className="border-background/40 flex h-20 w-full items-center justify-between border-b px-6 py-4 shrink-0">
-        <Image src="/logo-full.png" height={100} width={100} alt="Logo" />
+      <div className="border-background/10 flex h-20 w-full shrink-0 items-center justify-between border-b px-6 py-4">
+        <Image alt="Logo" height={100} src="/logo-full.png" width={100} />
         <button
+          aria-label="Fermer menu"
           className="text-background text-2xl"
           onClick={onClick}
           type="button"
-          aria-label="Fermer menu"
         >
           <FaTimes />
         </button>
@@ -63,11 +63,11 @@ const MenuMobile = ({ onClick }: MenuMobileProps) => {
           </Link>
         ))}
       </div>
-      <div className="w-full space-y-3 px-6">
+      <div className="w-full space-y-3 px-6 border-t border-background/10">
         <button
+          aria-label="Prendre RDV"
           className="bg-background flex w-full items-center justify-center gap-x-2 rounded-xl px-4 py-3 font-extrabold text-white"
           type="button"
-          aria-label="Prendre RDV"
         >
           <FaCalendarAlt />
           <div className="">Prendre RDV</div>
