@@ -3,17 +3,14 @@ import { FaPhone } from "react-icons/fa6"
 
 export default function PhoneCallBtn() {
   return (
-    <button
-      className="bg-background rounded-xl px-4 py-3 font-extrabold text-white transition-all duration-150 ease-in-out hover:scale-105 hover:cursor-pointer group w-12 h-12"
-      type="button"
+    <Link
+      href="tel:+261332955119"
+      className="group relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl bg-background p-3 font-extrabold text-white transition-[width,padding] duration-200 ease-out hover:w-80 hover:scale-105 hover:cursor-pointer hover:justify-start hover:px-4"
     >
-      <Link
-        className="flex w-full items-center justify-center gap-x-2 "
-        href="phone:+261332955119"
-      >
-        <FaPhone />
-        <div className="hidden">+261 33 29 551 19</div>
-      </Link>
-    </button>
+      <FaPhone className="shrink-0" />
+      <span className="absolute left-10 whitespace-nowrap translate-x-full transition-transform duration-200 ease-out group-hover:translate-x-0">
+        +261 33 29 551 19
+      </span>
+    </Link>
   )
 }
