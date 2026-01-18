@@ -22,8 +22,8 @@ const needsData = [
 
 export default function NeedSection() {
   return (
-    <Section>
-      <div className="">
+    <Section isNotMaxWidth>
+      <div className="w-full">
         <h3 className="text-3xl font-extrabold text-center">
           Des <span className="text-4xl text-primary">offres</span> adaptées à
           chaque <span className="text-4xl text-primary">besoin</span>
