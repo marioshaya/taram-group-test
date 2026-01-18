@@ -1,6 +1,40 @@
 import Image from "next/image"
 import Section from "../Section"
 
+const portfolioProjects = [
+  {
+    title: "JWL Marketing",
+    image: "/couverture-jwl.png",
+    category: [
+      "Site vitrine",
+      "E-commerce",
+      "SEO",
+      "Design sur mesure",
+      "API's"
+    ]
+  },
+  {
+    title: "GreenBeamCraft",
+    image: "/couverture-gbc.png",
+    category: [
+      "Site E-commerce",
+      "Configuration 2D/3D",
+      "Interface admin",
+      "API's"
+    ]
+  },
+  {
+    title: "Portfolio [DEMO]",
+    image: "/couverture-portfolio.png",
+    category: [
+      "Site vitrine",
+      "Design sur mesure",
+      "Animations Motion",
+      "API's"
+    ]
+  }
+]
+
 const PortfolioSection = () => {
   return (
     <Section>
@@ -10,6 +44,29 @@ const PortfolioSection = () => {
         <span className="underline text-secondary text-4xl">cœur</span> de
         chaque <span className="text-secondary text-4xl">projet</span>
       </h2>
+      <div className="grid gap-4 md:grid-cols-3">
+        {portfolioProjects.map((item) => (
+          <div
+            className="bg-linear-to-r to-primaryLight from-primary rounded-2xl text-background py-4"
+            key={item.title}
+          >
+            <Image src={item.image} width={800} height={600} alt={item.title} />
+            <div className="px-4">
+              <h3 className="text-2xl font-bold text-black">{item.title}</h3>
+              <div className="flex flex-wrap gap-2 items-center">
+                {item.category.map((cat) => (
+                  <div
+                    className="bg-background/20 border border-white/30 px-4 py-1 rounded-3xl backdrop-blur-lg text-xs"
+                    key={cat}
+                  >
+                    {cat}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </Section>
   )
 }
