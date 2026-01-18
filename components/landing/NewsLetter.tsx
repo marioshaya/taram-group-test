@@ -1,3 +1,4 @@
+import Link from "next/link"
 import Section from "../Section"
 
 export default function NewsLetter() {
@@ -20,7 +21,7 @@ export default function NewsLetter() {
         mail.
       </p>
       <div
-        className="border-2 rounded-2xl border-white/20 p-4"
+        className="w-full md:w-[75%] border-2 rounded-2xl border-white/20 p-4"
         style={{
           background:
             "linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)",
@@ -31,18 +32,31 @@ export default function NewsLetter() {
       >
         <form className="flex flex-col md:flex-row items-center gap-4">
           <input
-            className="jsx-4f57d6e22a251548 w-full rounded-2xl border-2 border-white/30 bg-white/10 backdrop-blur-md px-4 sm:px-6 py-3 sm:py-5 text-white placeholder:text-white/60 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/30 focus:bg-white/15 transition-all text-base sm:text-lg font-medium shadow-[0_8px_32px_rgba(0,0,0,0.3)] disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full rounded-2xl border-2 border-white/30 bg-white/10 backdrop-blur-md px-4 sm:px-6 py-3 sm:py-5 text-white placeholder:text-white/40 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/30 focus:bg-white/15 transition-all text-base sm:text-lg font-medium shadow-[0_8px_32px_rgba(0,0,0,0.3)] disabled:opacity-50 disabled:cursor-not-allowed"
             placeholder="Votre adresse électronique"
             type="email"
           />
           <button
-            className="rounded-2xl bg-linear-to-r from-primary via-[#5BCA9D] to-primaryLight px-6 sm:px-10 py-3 sm:py-5 font-bold text-lg sm:text-2xl transition-all shadow-[0_8px_32px_rgba(113,221,174,0.4)] hover:shadow-[0_12px_40px_rgba(113,221,174,0.6)] hover:-translate-y-1 hover:scale-105 relative overflow-hidden w-full sm:w-auto self-start disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:translate-y-0"
+            className="rounded-2xl text-background bg-linear-to-r from-primary via-[#5BCA9D] to-primaryLight px-6 sm:px-10 py-3 sm:py-5 font-bold text-lg sm:text-2xl transition-all hover:shadow-[0_12px_40px_rgba(113,221,174,0.6)] hover:scale-105 relative w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:translate-y-0"
+            style={{
+              boxShadow: "0 8px 32px rgba(113, 221, 174, 0.4)"
+            }}
             type="submit"
           >
             S'abonner
           </button>
         </form>
       </div>
+      <p className="text-sm text-white/50 text-center mt-4 max-w-xs sm:max-w-full mx-auto">
+        En vous inscrivant, vous acceptez notre{" "}
+        <Link
+          className="underline hover:text-white/70 transition inline-block py-2 px-1 min-h-[44px]"
+          href="/politique-de-confidentialite"
+        >
+          politique de confidentialité
+        </Link>
+        .
+      </p>
     </Section>
   )
 }
