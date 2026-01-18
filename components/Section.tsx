@@ -13,7 +13,7 @@ const Section = ({
       <div
         className={clsx(
           !isNotMaxWidth && "max-w-7xl",
-          "mx-auto flex flex-col items-center justify-center gap-4  min-h-dvh px-4 sm:px-6"
+          "mx-auto flex flex-col items-center justify-center gap-4 py-4 min-h-dvh px-4 sm:px-6"
         )}
       >
         {children}
