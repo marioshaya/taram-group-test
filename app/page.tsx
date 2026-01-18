@@ -2,6 +2,7 @@ import LandingSection from "@/components/landing"
 import DifferenceSection from "@/components/landing/DifferenceSection"
 import FaqSection from "@/components/landing/FaqSection"
 import NeedSection from "@/components/landing/NeedSection"
+import NewsLetter from "@/components/landing/NewsLetter"
 import PortfolioSection from "@/components/landing/PortfolioSection"
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <PortfolioSection />
       <NeedSection />
       <FaqSection />
+      <NewsLetter />
     </main>
   )
 }
