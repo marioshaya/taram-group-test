@@ -1,6 +1,33 @@
 import Image from "next/image"
 import Section from "../Section"
 
+const differences = [
+  {
+    label: "Suivi instantané",
+    description:
+      "Suivez l’avancement du projet et recevez un lien d'accès dès le départ.",
+    illustration: "/suivientempsreel.png"
+  },
+  {
+    label: "Résultats garantis",
+    description:
+      "Engagement sur les objectifs fixés ou ajustement jusqu'à satisfaction complète.",
+    illustration: "/resultatgaranti.png"
+  },
+  {
+    label: "Fiabilité totale",
+    description:
+      "100 % de clients satisfaits, accompagnement humain et suivi sur-mesure.",
+    illustration: "/fiabilitetotale.png"
+  },
+  {
+    label: "Rapidité au RDV",
+    description:
+      "Projet rendu avant la date prévue ou réduction immédiate sur le solde.",
+    illustration: "/rapiditeaurdv.png"
+  }
+]
+
 const DifferenceSection = () => {
   return (
     <Section>
@@ -14,6 +41,25 @@ const DifferenceSection = () => {
         Mais <span className="text-4xl text-primary">où</span> est la{" "}
         <span className="text-4xl text-primary">différence</span> ?
       </h2>
+      <div className="grid gap-4 md:grid-cols-2">
+        {differences.map((diff) => (
+          <div
+            className="rounded-3xl bg-linear-to-r from-primaryLight to-primary even:from-primary even:to-primaryLight p-4 text-background space-y-3"
+            key={diff.label}
+          >
+            <div className="flex items-center gap-x-2">
+              <Image
+                src={diff.illustration}
+                width={60}
+                height={60}
+                alt="Suvi en temps réel"
+              />
+              <h3 className="text-3xl font-bold">{diff.label}</h3>
+            </div>
+            <p>{diff.description}</p>
+          </div>
+        ))}
+      </div>
     </Section>
   )
 }

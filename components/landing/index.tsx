@@ -35,7 +35,7 @@ const LandingSection = () => {
       <div className="flex flex-col items-center justify-center gap-4 font-extrabold md:flex-row">
         <div className="relative w-full md:w-auto">
           <button
-            className="text-background from-primary flex w-full items-center justify-center gap-x-2 rounded-xl bg-linear-to-r to-[#2A9D7A] px-4 py-2 transition-all ease-in-out hover:scale-105 hover:cursor-pointer hover:duration-150 md:w-auto"
+            className="text-background from-primary flex w-full items-center justify-center gap-x-2 rounded-xl bg-linear-to-r to-primaryLight px-4 py-2 transition-all ease-in-out hover:scale-105 hover:cursor-pointer hover:duration-150 md:w-auto"
             type="button"
           >
             <FaCalendarAlt />
