@@ -4,6 +4,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { FaCalendarAlt, FaTimes } from "react-icons/fa"
 import { FaPhone } from "react-icons/fa6"
+import { isLinkActive } from "@/lib/isLinkActive"
 import { navLinks } from "./navLinks"
 
 interface MenuMobileProps {
@@ -12,10 +13,6 @@ interface MenuMobileProps {
 
 const MenuMobile = ({ onClick }: MenuMobileProps) => {
   const pathname = usePathname()
-
-  const isLinkActive = (link: string) => {
-    if (link === pathname) return true
-  }
 
   return (
     <div className="bg-primary absolute top-0 left-0 z-40 mx-auto flex h-dvh w-full flex-col items-center justify-between pb-4">
@@ -38,7 +35,7 @@ const MenuMobile = ({ onClick }: MenuMobileProps) => {
         {navLinks.map((item) => (
           <Link
             className={clsx(
-              isLinkActive(item.link) &&
+              isLinkActive(pathname, item.link) &&
                 "bg-background rounded-lg text-white shadow-sm",
               "text-background w-full px-4 py-3 font-semibold"
             )}
