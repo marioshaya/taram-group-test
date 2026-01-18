@@ -27,7 +27,8 @@ export default function Home() {
           </h1>
 
           <p className="max-w-lg text-center text-base font-semibold text-white/80">
-            Design moderne, solide SEO, Suivi complet : <br />
+            Design moderne, <br className="sm:hidden" />
+            solide SEO, Suivi complet : <br />
             on construit un site qui retient vos visiteurs et vous apporte des
             résultats.
           </p>
