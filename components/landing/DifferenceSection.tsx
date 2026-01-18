@@ -10,6 +10,10 @@ const DifferenceSection = () => {
         height={300}
         alt="Où est la différence ?"
       />
+      <h2 className="text-3xl font-semibold text-center">
+        Mais <span className="text-4xl text-primary">où</span> est la{" "}
+        <span className="text-4xl text-primary">différence</span> ?
+      </h2>
     </Section>
   )
 }
