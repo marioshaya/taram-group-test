@@ -38,7 +38,11 @@ const MenuMobile = ({ onClick }: MenuMobileProps) => {
   return (
     <div className="bg-primary absolute top-0 left-0 z-40 mx-auto flex h-dvh w-full flex-col items-center justify-between pb-4">
       <div className="border-background/10 flex h-20 w-full shrink-0 items-center justify-between border-b px-6 py-4">
-        <Image alt="Logo" height={100} src="/logo-full.png" width={100} />
+        <button type="button" onClick={onClick}>
+          <Link href="/">
+            <Image alt="Logo" height={100} src="/logo-full.png" width={100} />
+          </Link>
+        </button>
         <button
           aria-label="Fermer menu"
           className="text-background text-2xl"

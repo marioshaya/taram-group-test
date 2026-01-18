@@ -11,7 +11,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="bg-primary fixed top-0 left-0 w-full">
+    <header className="bg-primary fixed z-30 top-0 left-0 w-full">
       <div className="mx-auto flex h-20 w-full items-center justify-between px-6">
         <button
           className="text-background h-10 w-10 text-2xl"
