@@ -1,4 +1,5 @@
 import Image from "next/image"
+import PrendreRdvCta from "../buttons/PrendreRdvCta"
 import Section from "../Section"
 
 const portfolioProjects = [
@@ -69,6 +70,7 @@ const PortfolioSection = () => {
           </div>
         ))}
       </div>
+      <PrendreRdvCta />
     </Section>
   )
 }
