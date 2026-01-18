@@ -14,7 +14,7 @@ export default function Home() {
             </div>
           </div>
 
-          <h1 className="max-w-3xl text-center text-3xl font-semibold tracking-tight lg:text-5xl">
+          <h1 className="max-w-3xl text-center text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
             Votre <span className="text-primary">site</span> doit{" "}
             <span className="text-primary">donner envie</span> de{" "}
             <span className="text-primary">rester</span>, pas de{" "}
