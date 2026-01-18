@@ -8,6 +8,7 @@ import { useEffect, useState } from "react"
 import { FaCalendarAlt } from "react-icons/fa"
 import { MdMenu } from "react-icons/md"
 import { isLinkActive } from "@/lib/isLinkActive"
+import PhoneCallBtn from "../buttons/PhoneCall"
 import PrendreRdvBtn from "../buttons/PrendreRdv"
 import MenuMobile from "./MenuMobile"
 import { navLinks } from "./navLinks"
@@ -84,8 +85,9 @@ export default function Navbar() {
             </Link>
           ))}
         </nav>
-        <div className="">
+        <div className="flex items-center gap-x-3">
           <PrendreRdvBtn />
+          <PhoneCallBtn />
         </div>
       </div>
       {isMenuOpen && <MenuMobile onClick={() => setIsMenuOpen(false)} />}
