@@ -28,7 +28,7 @@ export default function NeedSection() {
           Des <span className="text-4xl text-primary">offres</span> adaptées à
           chaque <span className="text-4xl text-primary">besoin</span>
         </h3>
-        <div className="flex items-center">
+        <div className="flex flex-col md:flex-row items-center">
           <div className="relative w-full h-full min-h-[250px] sm:min-h-[400px] md:min-h-[500px] rounded-2xl overflow-hidden">
             <Image
               className="object-cover object-top"
@@ -39,7 +39,7 @@ export default function NeedSection() {
             />
           </div>
           <div className="w-full">
-            <h4 className="text-2xl text-primary font-extrabold pb-4">
+            <h4 className="text-2xl text-primary font-extrabold py-4 md:pt-0">
               Vos besoins concernent ...
             </h4>
             <div className="flex flex-col gap-y-3">
