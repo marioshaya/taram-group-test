@@ -2,30 +2,55 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { FaCalendarAlt } from "react-icons/fa"
 import { MdMenu } from "react-icons/md"
 import MenuMobile from "./MenuMobile"
 
+const SCROLL_THRESHOLD = 32
+
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => {
+      setIsScrolled(window.scrollY > SCROLL_THRESHOLD)
+    }
+    onScroll()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
 
   return (
-    <header className="bg-primary fixed z-30 top-0 left-0 w-full">
-      <div className="mx-auto flex h-20 w-full items-center justify-between px-6">
+    <header
+      className={`bg-primary fixed top-0 left-0 z-30 w-full transition-[height] duration-200 ease-out ${
+        isScrolled ? "h-14" : "h-20"
+      }`}
+    >
+      <div className="mx-auto flex h-full w-full items-center justify-between px-6">
         <button
-          className="text-background h-10 w-10 text-2xl"
+          className={`text-background flex shrink-0 items-center justify-center text-2xl transition-[width,height] duration-200 ease-out ${
+            isScrolled ? "h-9 w-9" : "h-10 w-10"
+          }`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           type="button"
         >
           <MdMenu />
         </button>
-        <Link href="/">
+        <Link
+          href="/"
+          className={`flex shrink-0 items-center justify-center transition-[transform] duration-200 ease-out ${
+            isScrolled ? "scale-[0.55]" : "scale-100"
+          }`}
+        >
           <Image src="/logo-full.png" width={100} height={100} alt="Logo" />
         </Link>
         <button
           aria-label="Prendre rendez-vous"
-          className="bg-background flex h-12 w-12 items-center justify-center rounded-xl"
+          className={`bg-background flex shrink-0 items-center justify-center rounded-xl transition-[width,height] duration-200 ease-out ${
+            isScrolled ? "h-10 w-10" : "h-12 w-12"
+          }`}
           type="button"
         >
           <FaCalendarAlt />
