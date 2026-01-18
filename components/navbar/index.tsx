@@ -1,13 +1,23 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import { MdMenu } from "react-icons/md"
 import { FaCalendarAlt } from "react-icons/fa"
+import { useState } from "react"
+import MenuMobile from "./MenuMobile"
 
 export default function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
   return (
     <header className="bg-primary fixed top-0 left-0 w-full">
       <div className="mx-auto flex h-20 w-full items-center justify-between px-6">
-        <button className="text-background h-10 w-10 text-2xl" type="button">
+        <button
+          className="text-background h-10 w-10 text-2xl"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          type="button"
+        >
           <MdMenu />
         </button>
         <Link href="/">
@@ -21,6 +31,7 @@ export default function Navbar() {
           <FaCalendarAlt />
         </button>
       </div>
+      {isMenuOpen && <MenuMobile onClick={() => setIsMenuOpen(false)} />}
     </header>
   )
 }
