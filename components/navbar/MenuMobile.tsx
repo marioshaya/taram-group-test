@@ -52,7 +52,7 @@ const MenuMobile = ({ onClick }: MenuMobileProps) => {
           <FaTimes />
         </button>
       </div>
-      <div className="flex h-[80vh] w-full flex-col items-center gap-y-4 px-6 py-4">
+      <div className="flex h-[80vh] w-full flex-col items-center gap-y-2 px-6 py-4">
         {navLinks.map((item) => (
           <Link
             className={clsx(
@@ -68,7 +68,7 @@ const MenuMobile = ({ onClick }: MenuMobileProps) => {
           </Link>
         ))}
       </div>
-      <div className="w-full space-y-3 px-6 border-t border-background/10">
+      <div className="w-full space-y-3 px-6 border-t pt-4 border-background/10">
         <button
           aria-label="Prendre RDV"
           className="bg-background flex w-full items-center justify-center gap-x-2 rounded-xl px-4 py-3 font-extrabold text-white"
