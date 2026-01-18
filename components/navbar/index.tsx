@@ -1,17 +1,23 @@
 "use client"
 
+import clsx from "clsx"
 import Image from "next/image"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
 import { FaCalendarAlt } from "react-icons/fa"
 import { MdMenu } from "react-icons/md"
+import { isLinkActive } from "@/lib/isLinkActive"
 import MenuMobile from "./MenuMobile"
+import { navLinks } from "./navLinks"
 
 const SCROLL_THRESHOLD = 32
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+
+  const pathname = usePathname()
 
   useEffect(() => {
     const onScroll = () => {
@@ -28,7 +34,8 @@ export default function Navbar() {
         isScrolled ? "h-14" : "h-20"
       }`}
     >
-      <div className="mx-auto flex h-full w-full items-center justify-between px-6">
+      {/* Mobile */}
+      <div className="md:hidden mx-auto flex h-full w-full items-center justify-between px-6">
         <button
           className={`text-background flex shrink-0 items-center justify-center text-2xl transition-[width,height] duration-200 ease-out ${
             isScrolled ? "h-9 w-9" : "h-10 w-10"
@@ -55,6 +62,27 @@ export default function Navbar() {
         >
           <FaCalendarAlt />
         </button>
+      </div>
+      {/* Desktop */}
+      <div className="hidden md:flex mx-auto h-full w-full items-center justify-between px-6">
+        <Link href="/" className="">
+          <Image src="/logo-full.png" width={100} height={100} alt="Logo" />
+        </Link>
+        <nav>
+          {navLinks.map((item) => (
+            <Link
+              className={clsx(
+                isLinkActive(pathname, item.link) &&
+                  "bg-background rounded-lg text-white shadow-sm",
+                "text-background w-full px-4 py-3 font-semibold"
+              )}
+              href={item.link}
+              key={item.link}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
       </div>
       {isMenuOpen && <MenuMobile onClick={() => setIsMenuOpen(false)} />}
     </header>
