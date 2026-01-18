@@ -1,5 +1,7 @@
+import clsx from "clsx"
 import Image from "next/image"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { FaCalendarAlt, FaTimes } from "react-icons/fa"
 import { FaPhone } from "react-icons/fa6"
 
@@ -27,9 +29,15 @@ interface MenuMobileProps {
 }
 
 const MenuMobile = ({ onClick }: MenuMobileProps) => {
+  const pathname = usePathname()
+
+  const isLinkActive = (link: string) => {
+    if (link === pathname) return true
+  }
+
   return (
     <div className="bg-primary absolute top-0 left-0 z-40 mx-auto flex h-dvh w-full flex-col items-center justify-between pb-4">
-      <div className="border-background/40 flex h-20 w-full items-center justify-between border-b px-6">
+      <div className="border-background/40 flex h-20 w-full items-center justify-between border-b px-6 py-4 shrink-0">
         <Image src="/logo-full.png" height={100} width={100} alt="Logo" />
         <button
           className="text-background text-2xl"
@@ -40,16 +48,19 @@ const MenuMobile = ({ onClick }: MenuMobileProps) => {
           <FaTimes />
         </button>
       </div>
-      <div className="h-[80vh] w-full space-y-4 px-6 py-4">
+      <div className="flex h-[80vh] w-full flex-col items-center gap-y-4 px-6 py-4">
         {navLinks.map((item) => (
-          <div className="w-full" key={item.link}>
-            <Link
-              className="w-full text-background rounded-lg px-4 py-3 font-semibold shadow-sm"
-              href={item.link}
-            >
-              {item.label}
-            </Link>
-          </div>
+          <Link
+            className={clsx(
+              isLinkActive(item.link) &&
+                "bg-background rounded-lg text-white shadow-sm",
+              "text-background w-full px-4 py-3 font-semibold"
+            )}
+            href={item.link}
+            key={item.link}
+          >
+            {item.label}
+          </Link>
         ))}
       </div>
       <div className="w-full space-y-3 px-6">
