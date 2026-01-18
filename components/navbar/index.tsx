@@ -8,6 +8,7 @@ import { useEffect, useState } from "react"
 import { FaCalendarAlt } from "react-icons/fa"
 import { MdMenu } from "react-icons/md"
 import { isLinkActive } from "@/lib/isLinkActive"
+import PrendreRdvBtn from "../buttons/PrendreRdv"
 import MenuMobile from "./MenuMobile"
 import { navLinks } from "./navLinks"
 
@@ -83,6 +84,9 @@ export default function Navbar() {
             </Link>
           ))}
         </nav>
+        <div className="">
+          <PrendreRdvBtn />
+        </div>
       </div>
       {isMenuOpen && <MenuMobile onClick={() => setIsMenuOpen(false)} />}
     </header>

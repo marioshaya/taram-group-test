@@ -2,9 +2,10 @@ import clsx from "clsx"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { FaCalendarAlt, FaTimes } from "react-icons/fa"
+import { FaTimes } from "react-icons/fa"
 import { FaPhone } from "react-icons/fa6"
 import { isLinkActive } from "@/lib/isLinkActive"
+import PrendreRdvBtn from "../buttons/PrendreRdv"
 import { navLinks } from "./navLinks"
 
 interface MenuMobileProps {
@@ -48,14 +49,7 @@ const MenuMobile = ({ onClick }: MenuMobileProps) => {
         ))}
       </div>
       <div className="w-full space-y-3 px-6 border-t pt-4 border-background/10">
-        <button
-          aria-label="Prendre RDV"
-          className="bg-background flex w-full items-center justify-center gap-x-2 rounded-xl px-4 py-3 font-extrabold text-white"
-          type="button"
-        >
-          <FaCalendarAlt />
-          <div className="">Prendre RDV</div>
-        </button>
+        <PrendreRdvBtn />
         <button
           className="border-background text-background flex w-full items-center justify-center gap-x-2 rounded-xl border-2 px-4 py-3 font-extrabold"
           type="button"
