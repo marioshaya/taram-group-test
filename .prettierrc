@@ -2,6 +2,7 @@
   "tabWidth": 2,
   "printWidth": 80,
   "semi": false,
+  "bracketSameLine": false,
   "trailingComma": "none",
   "plugins": ["prettier-plugin-tailwindcss"]
 }
