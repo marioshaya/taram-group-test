@@ -1,5 +1,6 @@
 import LandingSection from "@/components/landing"
 import DifferenceSection from "@/components/landing/DifferenceSection"
+import FaqSection from "@/components/landing/FaqSection"
 import NeedSection from "@/components/landing/NeedSection"
 import PortfolioSection from "@/components/landing/PortfolioSection"
 
@@ -10,6 +11,7 @@ export default function Home() {
       <DifferenceSection />
       <PortfolioSection />
       <NeedSection />
+      <FaqSection />
     </main>
   )
 }
