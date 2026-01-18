@@ -52,7 +52,9 @@ const PortfolioSection = () => {
           >
             <Image src={item.image} width={800} height={600} alt={item.title} />
             <div className="px-4">
-              <h3 className="text-2xl font-bold text-black">{item.title}</h3>
+              <h3 className="text-2xl font-bold text-black pb-2">
+                {item.title}
+              </h3>
               <div className="flex flex-wrap gap-2 items-center">
                 {item.category.map((cat) => (
                   <div
