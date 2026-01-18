@@ -56,6 +56,7 @@ export default function FaqSection() {
           const isOpen = openKey === item.question
           const answerId = `faq-answer-${i}`
           const questionId = `faq-question-${i}`
+
           return (
             <div
               className="relative border border-white/20 bg-white/10 hover:bg-white/25 duration-300 ease-in-out transition-all rounded-xl p-4"
