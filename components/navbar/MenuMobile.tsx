@@ -58,6 +58,7 @@ const MenuMobile = ({ onClick }: MenuMobileProps) => {
             )}
             href={item.link}
             key={item.link}
+            onClick={onClick}
           >
             {item.label}
           </Link>
