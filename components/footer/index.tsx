@@ -12,9 +12,11 @@ import { legalLinks } from "./legalLinks"
 const Footer = () => {
   const pathname = usePathname()
 
+  const currentYear = new Date().getFullYear()
+
   return (
     <footer className="w-full py-12 bg-primary">
-      <div className="mx-auto w-full max-w-6xl px-6">
+      <div className="mx-auto w-full max-w-6xl px-6 space-y-4">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
             <Link className="block" href="/">
@@ -76,6 +78,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <p className="text-sm text-center pt-8 text-background border-t border-background/10">
+          &copy; 2025 - {currentYear} Web Difference. Tous droits réservés.
+        </p>
       </div>
     </footer>
   )
