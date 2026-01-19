@@ -25,9 +25,7 @@ const Footer = () => {
             </p>
           </div>
           <div className="space-y-3">
-            <h3 className="text-base font-extrabold text-background">
-              Navigation
-            </h3>
+            <h3 className="text-lg font-black text-background">Navigation</h3>
             <nav className="flex flex-col gap-y-2">
               {navLinks.map((nav) => (
                 <Link
@@ -45,9 +43,7 @@ const Footer = () => {
             </nav>
           </div>
           <div className="space-y-3">
-            <h3 className="text-base font-extrabold text-background">
-              Contact
-            </h3>
+            <h3 className="text-lg font-black text-background">Contact</h3>
             <div className="flex flex-col gap-y-2">
               {contactData.map((item) => {
                 const Icon = item.icon
@@ -66,7 +62,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="space-y-3">
-            <h3 className="text-base font-extrabold text-background">Légal</h3>
+            <h3 className="text-lg font-black text-background">Légal</h3>
             <div className="flex flex-col gap-y-2">
               {legalLinks.map((item) => (
                 <Link
