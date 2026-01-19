@@ -32,9 +32,9 @@ const Footer = () => {
               {navLinks.map((nav) => (
                 <Link
                   className={clsx(
-                    "text-sm text-background transition-all",
+                    "text-sm text-background decoration-2 underline-offset-4 hover:decoration-background/65 hover:underline transition-all duration-200 ease-in-out",
                     isLinkActive(pathname, nav.link) &&
-                      "underline decoration-background/65 decoration-2 underline-offset-4"
+                      "underline decoration-background/65"
                   )}
                   href={nav.link}
                   key={nav.link}
@@ -54,7 +54,7 @@ const Footer = () => {
 
                 return (
                   <Link
-                    className="flex items-center gap-x-2 text-sm text-background hover:underline decoration-background/65 decoration-2 hover:underline-offset-4 transition-all duration-300 ease-in-out"
+                    className="flex items-center gap-x-2 text-sm text-background decoration-background/65 decoration-2 underline-offset-4 hover:underline transition-all duration-300 ease-in-out"
                     href={item.link}
                     key={item.link}
                   >
