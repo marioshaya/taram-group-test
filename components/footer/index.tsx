@@ -17,7 +17,7 @@ const Footer = () => {
       <div className="mx-auto w-full max-w-6xl px-6">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
-            <Link href="/">
+            <Link className="block" href="/">
               <Image src="/logo-full.png" width={160} height={65} alt="Logo" />
             </Link>
             <p className="text-sm text-background">
