@@ -44,7 +44,7 @@ const DifferenceSection = () => {
       <div className="grid gap-4 md:grid-cols-2">
         {differences.map((diff) => (
           <div
-            className="rounded-3xl bg-linear-to-r from-primaryLight to-primary even:from-primary even:to-primaryLight p-4 text-background space-y-3"
+            className="rounded-3xl bg-linear-to-r from-primaryLight to-primary even:from-primary even:to-primaryLight p-4 text-background space-y-3 hover:scale-105 transition-all duration-300 ease-in-out"
             key={diff.label}
           >
             <div className="flex items-center gap-x-2">
