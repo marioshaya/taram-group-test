@@ -1,4 +1,5 @@
 export * from "./contactData"
 export * from "./difference"
+export * from "./faqData"
 export * from "./legalLinks"
 export * from "./navLinks"
