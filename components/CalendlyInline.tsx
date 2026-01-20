@@ -9,7 +9,6 @@ export default function CalendlyInline() {
     if (!ref.current) return
     if (!window.Calendly) return
 
-    // @ts-expect-error
     window.Calendly.initInlineWidget({
       url: "https://calendly.com/marioshaya/quick-30-minutes-contact-meeting",
       parentElement: ref.current
