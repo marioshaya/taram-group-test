@@ -4,6 +4,7 @@ import FaqSection from "@/components/landing/FaqSection"
 import NeedSection from "@/components/landing/NeedSection"
 import NewsLetter from "@/components/landing/NewsLetter"
 import PortfolioSection from "@/components/landing/PortfolioSection"
+import TestimonialsSection from "@/components/landing/TestimonialsSection"
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <DifferenceSection />
       <PortfolioSection />
       <NeedSection />
+      <TestimonialsSection />
       <FaqSection />
       <NewsLetter />
     </main>
