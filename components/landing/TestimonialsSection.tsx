@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Section from "../Section"
 
 const testimonials = [
@@ -54,8 +55,13 @@ export default function TestimonialsSection() {
                 </div>
               </div>
               <div className="flex items-center gap-x-2 rounded-full bg-background/10 p-1 font-bold">
-                <div className="bg-background text-white rounded-full w-8 h-8 flex items-center justify-center">
-                  {item.author.charAt(0)}
+                <div className="text-white rounded-full w-8 h-8 flex items-center justify-center overflow-hidden border-2 border-background">
+                  <Image
+                    src={`https://i.pravatar.cc/500?img=${Math.floor(Math.random() * 70) + 1}`}
+                    width={300}
+                    height={300}
+                    alt="Random fake avatar"
+                  />
                 </div>
                 <div className="text-sm pr-3 text-background/90">
                   {item.author}
