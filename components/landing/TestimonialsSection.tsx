@@ -52,9 +52,12 @@ export default function TestimonialsSection() {
                 </div>
                 <div className="">
                   <div className="font-black text-xl">{item.company}</div>
-                  <div className="flex items-center gap-x-1">
+                  <div className="flex items-center gap-x-0.5">
                     {[...Array(item.rating)].map((_, i) => (
-                      <FaStar key={`${item.company}-star-${i}`} />
+                      <FaStar
+                        className="w-3 h-3"
+                        key={`${item.company}-star-${i}`}
+                      />
                     ))}
                   </div>
                 </div>
