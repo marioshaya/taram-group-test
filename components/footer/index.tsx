@@ -4,9 +4,8 @@ import clsx from "clsx"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { contactData, navLinks } from "@/data"
+import { contactData, legalLinks, navLinks } from "@/data"
 import { isLinkActive } from "@/lib/isLinkActive"
-import { legalLinks } from "./legalLinks"
 
 const Footer = () => {
   const pathname = usePathname()
