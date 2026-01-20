@@ -50,6 +50,7 @@ export default function NeedSection() {
                 })}
               </div>
             </div>
+
             {activeNeed && activeNeed === "web" && (
               <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center gap-y-4 bg-background">
                 <div className="text-2xl font-extrabold text-primary">
@@ -69,6 +70,38 @@ export default function NeedSection() {
                   >
                     <FaCirclePlus />
                     <div className="">Non, je souhaite en créer un</div>
+                  </button>
+                  <button
+                    className="flex items-center gap-x-2 text-sm"
+                    onClick={() => setActiveNeed("")}
+                    type="button"
+                  >
+                    <MdKeyboardBackspace />
+                    <div className="">Retour</div>
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {activeNeed && activeNeed === "mobile" && (
+              <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center gap-y-4 bg-background">
+                <div className="text-2xl font-extrabold text-primary">
+                  Avez-vous déjà une application mobile ?
+                </div>
+                <div className="text-xl space-y-4">
+                  <button
+                    className="w-full flex items-center gap-x-2 py-3 px-5 border border-white/20 bg-white/5 rounded-xl font-extrabold transition-all duration-200 ease-in-out hover:border-primary hover:text-primary hover:bg-white/10"
+                    type="button"
+                  >
+                    <FaCircleCheck />
+                    <div className="">Oui, j'ai déjà une app</div>
+                  </button>
+                  <button
+                    className="w-full flex items-center gap-x-2 py-3 px-5 border border-white/20 bg-white/5 rounded-xl font-extrabold transition-all duration-200 ease-in-out hover:border-primary hover:text-primary hover:bg-white/10"
+                    type="button"
+                  >
+                    <FaCirclePlus />
+                    <div className="">Non, je souhaite en créer une</div>
                   </button>
                   <button
                     className="flex items-center gap-x-2 text-sm"
