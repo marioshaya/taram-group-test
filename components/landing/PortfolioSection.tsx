@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import { portfolioProjects } from "@/data"
 import PrendreRdvCta from "../buttons/PrendreRdvCta"

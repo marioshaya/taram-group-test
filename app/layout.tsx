@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Geist_Mono, Inter } from "next/font/google"
 import "./globals.css"
+import Script from "next/script"
 import Footer from "@/components/footer"
 import Navbar from "@/components/navbar"
 
@@ -27,12 +28,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          href="https://assets.calendly.com/assets/external/widget.css"
+          rel="stylesheet"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
         {children}
         <Footer />
+        <Script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   )

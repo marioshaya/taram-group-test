@@ -4,6 +4,12 @@ export default function PrendreRdvCta() {
   return (
     <button
       className="text-background font-extrabold from-primary flex w-full items-center justify-center gap-x-2 text-2xl rounded-xl bg-linear-to-r to-primaryLight px-4 py-3 transition-all ease-in-out hover:scale-105 hover:cursor-pointer hover:duration-150 md:w-auto"
+      onClick={() => {
+        // @ts-expect-error
+        Calendly.initPopupWidget({
+          url: "https://calendly.com/marioshaya/quick-30-minutes-contact-meeting"
+        })
+      }}
       type="button"
     >
       <FaCalendarAlt />

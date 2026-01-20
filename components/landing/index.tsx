@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import { FaCalendarAlt } from "react-icons/fa"
 import { IoMdArrowRoundDown } from "react-icons/io"
@@ -37,6 +39,12 @@ const LandingSection = () => {
         <div className="relative w-full md:w-auto">
           <button
             className="text-background from-primary flex w-full items-center justify-center gap-x-2 rounded-xl bg-linear-to-r to-primaryLight px-4 py-2 transition-all ease-in-out hover:scale-105 hover:cursor-pointer hover:duration-150 md:w-auto"
+            onClick={() => {
+              // @ts-expect-error
+              Calendly.initPopupWidget({
+                url: "https://calendly.com/marioshaya/quick-30-minutes-contact-meeting"
+              })
+            }}
             type="button"
           >
             <FaCalendarAlt />

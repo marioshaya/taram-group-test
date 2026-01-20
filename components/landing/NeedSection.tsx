@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import { needsData } from "@/data"
 import PrendreRdvCta from "../buttons/PrendreRdvCta"
