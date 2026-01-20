@@ -19,7 +19,7 @@ export default function TestimonialsSection() {
       <div className="grid grid-cols-1 md:grid-cols-2 w-full text-background">
         {testimonials.map((item) => (
           <div
-            className="w-full bg-white rounded-2xl p-4 space-y-4"
+            className="w-full rounded-2xl p-4 space-y-4 bg-linear-to-r from-white to-white/50"
             key={item.company}
           >
             <div className="flex items-center justify-between">
@@ -32,7 +32,7 @@ export default function TestimonialsSection() {
                   <div className="">{item.rating}</div>
                 </div>
               </div>
-              <div className="flex items-center gap-x-2 rounded-full bg-background/30 p-1 font-bold">
+              <div className="flex items-center gap-x-2 rounded-full bg-background/10 p-1 font-bold">
                 <div className="bg-background text-white rounded-full w-8 h-8 flex items-center justify-center">
                   {item.author.charAt(0)}
                 </div>
