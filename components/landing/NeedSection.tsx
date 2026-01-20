@@ -60,7 +60,7 @@ export default function NeedSection() {
             )}
 
             {activeNeed && activeNeed === "web" && (
-              <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center gap-y-4 bg-background">
+              <div className="w-full h-full flex flex-col justify-center gap-y-4 bg-background">
                 <div className="text-2xl font-extrabold text-primary">
                   Avez-vous déjà un site web ?
                 </div>
@@ -76,7 +76,7 @@ export default function NeedSection() {
             )}
 
             {activeNeed && activeNeed === "mobile" && (
-              <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center gap-y-4 bg-background">
+              <div className="w-full h-full flex flex-col justify-center gap-y-4 bg-background">
                 <div className="text-2xl font-extrabold text-primary">
                   Avez-vous déjà une application mobile ?
                 </div>
@@ -99,7 +99,7 @@ export default function NeedSection() {
             )}
 
             {activeNeed && activeNeed === "automation" && (
-              <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center gap-y-4 bg-background">
+              <div className="w-full h-full flex flex-col justify-center gap-y-4 bg-background">
                 <div className="flex flex-col md:flex-row md:items-center justify-between">
                   <h3 className="font-extrabold text-3xl">Offre recommandée</h3>
                   <button
