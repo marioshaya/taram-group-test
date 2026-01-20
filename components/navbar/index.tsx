@@ -70,13 +70,13 @@ export default function Navbar() {
         <Link href="/" className="">
           <Image src="/logo-full.png" width={100} height={100} alt="Logo" />
         </Link>
-        <nav>
+        <nav className="space-x-2">
           {navLinks.map((item) => (
             <Link
               className={clsx(
                 isLinkActive(pathname, item.link) &&
-                  "bg-background rounded-lg text-white shadow-sm",
-                "text-background w-full px-4 py-3 font-semibold"
+                  "bg-background rounded-lg text-white border-2 border-background shadow-sm",
+                "text-background w-full rounded-lg px-4 py-3 font-semibold hover:shadow-lg hover:shadow-background/50 hover:border-2 transition-all duration-300 ease-in-out"
               )}
               href={item.link}
               key={item.link}
