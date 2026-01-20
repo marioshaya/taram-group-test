@@ -5,11 +5,12 @@ import { useState } from "react"
 import { FaCircleCheck, FaCirclePlus } from "react-icons/fa6"
 import { MdKeyboardBackspace } from "react-icons/md"
 import { needsData } from "@/data"
+import type { NeedsIdType } from "@/types"
 import PrendreRdvCta from "../buttons/PrendreRdvCta"
 import Section from "../Section"
 
 export default function NeedSection() {
-  const [activeNeed, setActiveNeed] = useState("")
+  const [activeNeed, setActiveNeed] = useState<NeedsIdType | null>(null)
 
   return (
     <Section isNotMaxWidth>
@@ -73,7 +74,7 @@ export default function NeedSection() {
                   </button>
                   <button
                     className="flex items-center gap-x-2 text-sm"
-                    onClick={() => setActiveNeed("")}
+                    onClick={() => setActiveNeed(null)}
                     type="button"
                   >
                     <MdKeyboardBackspace />
@@ -105,7 +106,7 @@ export default function NeedSection() {
                   </button>
                   <button
                     className="flex items-center gap-x-2 text-sm"
-                    onClick={() => setActiveNeed("")}
+                    onClick={() => setActiveNeed(null)}
                     type="button"
                   >
                     <MdKeyboardBackspace />

@@ -1,8 +1,16 @@
+import type { IconType } from "react-icons"
 import { CiGlobe } from "react-icons/ci"
 import { MdOutlinePhoneIphone } from "react-icons/md"
 import { RiRobot2Fill } from "react-icons/ri"
+import type { NeedsIdType } from "@/types"
 
-export const needsData = [
+interface NeedsDataIO {
+  id: NeedsIdType
+  title: string
+  icon: IconType
+}
+
+export const needsData: NeedsDataIO[] = [
   {
     id: "web",
     title: "Un site web",
