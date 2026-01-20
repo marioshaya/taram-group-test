@@ -130,8 +130,8 @@ export default function NeedSection() {
                   <div className="">Recommencer</div>
                 </button>
                 <div className="rounded-2xl p-6 bg-linear-to-r from-primary to-primaryLight space-y-3">
-                  <div className="bg-white rounded-2xl shadow-2xs px-4 py-2 flex items-center gap-x-4">
-                    <div className="border border-primary rounded-xl bg-primaryLight/20 w-16 h-16 flex items-center justify-center shadow-xl p-2">
+                  <div className="bg-white rounded-2xl shadow-2xs px-4 py-4 flex items-center gap-x-4">
+                    <div className="border border-primary/50 rounded-2xl bg-primary/10 w-16 h-16 flex items-center justify-center shadow-xl p-2">
                       <Image
                         className=""
                         src="/automatisation.png"
