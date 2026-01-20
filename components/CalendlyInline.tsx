@@ -15,5 +15,5 @@ export default function CalendlyInline() {
     })
   }, [])
 
-  return <div className="w-full h-[80vh]" ref={ref} />
+  return <div className="w-full h-[70vh]" ref={ref} />
 }
