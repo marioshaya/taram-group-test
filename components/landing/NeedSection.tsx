@@ -22,7 +22,7 @@ export default function NeedSection() {
           Des <span className="text-4xl text-primary">offres</span> adaptées à
           chaque <span className="text-4xl text-primary">besoin</span>
         </h3>
-        <div className="flex flex-col md:flex-row items-center">
+        <div className="flex flex-col min-h-[80vh] md:flex-row md:items-center">
           <div className="relative w-full h-full min-h-[250px] sm:min-h-[400px] md:min-h-[500px] rounded-2xl overflow-hidden">
             <Image
               className="object-cover object-top"
@@ -33,27 +33,29 @@ export default function NeedSection() {
             />
           </div>
           <div className="w-full relative">
-            <div className="w-full">
-              <h4 className="text-2xl text-primary font-extrabold py-4 md:pt-0">
-                Vos besoins concernent ...
-              </h4>
-              <div className="flex flex-col gap-y-3">
-                {needsData.map((need) => {
-                  const Icon = need.icon
-                  return (
-                    <button
-                      className="w-full flex items-center gap-x-2 font-bold border-2 border-white/10 bg-white/5 hover:text-primary hover:border-primary transition-all duration-300 ease-in-out hover:cursor-pointer px-4 py-3 rounded-xl"
-                      key={need.id}
-                      onClick={() => setActiveNeed(need.id)}
-                      type="button"
-                    >
-                      <Icon />
-                      <div className="">{need.title}</div>
-                    </button>
-                  )
-                })}
+            {!activeNeed && (
+              <div className="w-full h-full">
+                <h4 className="text-2xl text-primary font-extrabold py-4 md:pt-0">
+                  Vos besoins concernent ...
+                </h4>
+                <div className="flex flex-col gap-y-3">
+                  {needsData.map((need) => {
+                    const Icon = need.icon
+                    return (
+                      <button
+                        className="w-full flex items-center gap-x-2 font-bold border-2 border-white/10 bg-white/5 hover:text-primary hover:border-primary transition-all duration-300 ease-in-out hover:cursor-pointer px-4 py-3 rounded-xl"
+                        key={need.id}
+                        onClick={() => setActiveNeed(need.id)}
+                        type="button"
+                      >
+                        <Icon />
+                        <div className="">{need.title}</div>
+                      </button>
+                    )
+                  })}
+                </div>
               </div>
-            </div>
+            )}
 
             {activeNeed && activeNeed === "web" && (
               <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center gap-y-4 bg-background">
@@ -121,14 +123,16 @@ export default function NeedSection() {
 
             {activeNeed && activeNeed === "automation" && (
               <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center gap-y-4 bg-background">
-                <h3 className="font-extrabold text-3xl">Offre recommandée</h3>
-                <button
-                  className="text-left underline text-sm"
-                  onClick={() => setActiveNeed(null)}
-                  type="button"
-                >
-                  <div className="">Recommencer</div>
-                </button>
+                <div className="flex flex-col md:flex-row md:items-center justify-between">
+                  <h3 className="font-extrabold text-3xl">Offre recommandée</h3>
+                  <button
+                    className="text-left underline text-sm"
+                    onClick={() => setActiveNeed(null)}
+                    type="button"
+                  >
+                    <div className="">Recommencer</div>
+                  </button>
+                </div>
                 <div className="rounded-2xl p-6 bg-linear-to-r from-primary to-primaryLight space-y-3">
                   <div className="bg-white rounded-2xl shadow-2xs px-4 py-4 flex items-center gap-x-4">
                     <div className="border border-primary/50 rounded-2xl bg-primary/10 w-16 h-16 flex items-center justify-center shadow-xl p-2">
