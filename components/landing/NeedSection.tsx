@@ -16,6 +16,7 @@ import Section from "../Section"
 
 export default function NeedSection() {
   const [activeNeed, setActiveNeed] = useState<NeedsIdType | null>(null)
+  const [isRebranding, setIsRebranding] = useState<boolean | null>(null)
 
   return (
     <Section isNotMaxWidth>
@@ -65,15 +66,21 @@ export default function NeedSection() {
                   Avez-vous déjà un site web ?
                 </div>
                 <div className="text-xl space-y-4">
-                  <YesBtn onClick={() => {}} text="Oui, j'ai déjà un site" />
+                  <YesBtn
+                    onClick={() => setIsRebranding(true)}
+                    text="Oui, j'ai déjà un site"
+                  />
                   <NoBtn
-                    onClick={() => {}}
+                    onClick={() => setIsRebranding(false)}
                     text="Non, je souhaite en créer un"
                   />
                   <BackBtn onClick={() => setActiveNeed(null)} />
                 </div>
               </div>
             )}
+
+            {/* {isRebranding && isRebranding ? () : ()
+            } */}
 
             {activeNeed && activeNeed === "mobile" && (
               <div className="w-full h-full flex flex-col justify-center gap-y-4 bg-background">
