@@ -40,7 +40,7 @@ export default function TestimonialsSection() {
       <div className="grid grid-cols-1 md:grid-cols-2 w-full text-background gap-4">
         {testimonials.map((item) => (
           <div
-            className="w-full rounded-2xl p-4 space-y-4 bg-linear-to-r from-white to-white/50 shadow-xl shadow-white/25"
+            className="w-full rounded-2xl p-4 space-y-4 bg-linear-to-br nth-[2]:bg-linear-to-tr nth-[3]:bg-linear-to-tr nth-[4]:bg-linear-to-br from-white odd:from-white/50 odd:to-white to-white/50 shadow-xl shadow-white/25"
             key={item.company}
           >
             <div className="flex items-center justify-between">
