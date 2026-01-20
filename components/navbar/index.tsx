@@ -7,11 +7,11 @@ import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
 import { FaCalendarAlt } from "react-icons/fa"
 import { MdMenu } from "react-icons/md"
+import { navLinks } from "@/data"
 import { isLinkActive } from "@/lib/isLinkActive"
 import PhoneCallBtn from "../buttons/PhoneCall"
 import PrendreRdvBtn from "../buttons/PrendreRdv"
 import MenuMobile from "./MenuMobile"
-import { navLinks } from "./navLinks"
 
 const SCROLL_THRESHOLD = 32
 
