@@ -2,9 +2,12 @@
 
 import Image from "next/image"
 import { useState } from "react"
+import { FaCalendarAlt } from "react-icons/fa"
 import { FaCircleCheck, FaCirclePlus } from "react-icons/fa6"
+import { LiaLongArrowAltRightSolid } from "react-icons/lia"
 import { MdKeyboardBackspace } from "react-icons/md"
-import { needsData } from "@/data"
+import { TfiCheck } from "react-icons/tfi"
+import { needAutomationIncludes, needsData } from "@/data"
 import type { NeedsIdType } from "@/types"
 import PrendreRdvCta from "../buttons/PrendreRdvCta"
 import Section from "../Section"
@@ -111,6 +114,59 @@ export default function NeedSection() {
                   >
                     <MdKeyboardBackspace />
                     <div className="">Retour</div>
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {activeNeed && activeNeed === "automation" && (
+              <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center gap-y-4 bg-background">
+                <h3 className="font-extrabold text-3xl">Offre recommandée</h3>
+                <button
+                  className="text-left underline text-sm"
+                  onClick={() => setActiveNeed(null)}
+                  type="button"
+                >
+                  <div className="">Recommencer</div>
+                </button>
+                <div className="rounded-2xl p-6 bg-linear-to-r from-primary to-primaryLight space-y-3">
+                  <div className="bg-white rounded-xl shadow-2xs py-2">
+                    <h3 className="text-2xl font-extrabold text-background">
+                      Automatisation
+                    </h3>
+                  </div>
+                  <p className="text-sm text-background/90">
+                    Automatisez vos processus métier avec des workflows
+                    intelligents : devis, signature, facturation, notifications
+                    et rapports.
+                  </p>
+                  <div className="w-full space-y-2">
+                    <h4 className="uppercase font-semibold text-background/70">
+                      Ce qui est inclus
+                    </h4>
+                    <div className="rounded-2xl border border-white/30 bg-white/20 p-4 w-full space-y-4">
+                      {needAutomationIncludes.map((include) => (
+                        <div
+                          className="flex items-center gap-x-4 text-background rounded-full"
+                          key={include}
+                        >
+                          <div className="w-6 h-6 text-background border border-white/75 bg-white/40 rounded-full flex items-center justify-center shadow-xl">
+                            <TfiCheck className="text-xs" />
+                          </div>
+                          <div className="font-medium leading-relaxed">
+                            {include}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <button
+                    className="bg-background shadow-2xl font-extrabold w-full flex items-center justify-center gap-x-3 py-4 rounded-2xl mt-8 hover:scale-105 transition-all ease-in-out duration-300"
+                    type="button"
+                  >
+                    <FaCalendarAlt />
+                    <div className="">Réservez un appel gratuit</div>
+                    <LiaLongArrowAltRightSolid />
                   </button>
                 </div>
               </div>

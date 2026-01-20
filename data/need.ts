@@ -27,3 +27,9 @@ export const needsData: NeedsDataIO[] = [
     icon: RiRobot2Fill
   }
 ]
+
+export const needAutomationIncludes = [
+  "Devis & signature instantanés",
+  "Onboarding client guidé",
+  "Suivi des performances automatisé"
+]
