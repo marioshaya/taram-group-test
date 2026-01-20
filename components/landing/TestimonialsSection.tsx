@@ -37,7 +37,7 @@ export default function TestimonialsSection() {
       <h3 className="text-3xl font-extrabold text-center">
         Ils nous font <span className="text-primary text-4xl">confiance</span>
       </h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 w-full text-background">
+      <div className="grid grid-cols-1 md:grid-cols-2 w-full text-background gap-4">
         {testimonials.map((item) => (
           <div
             className="w-full rounded-2xl p-4 space-y-4 bg-linear-to-r from-white to-white/50"
