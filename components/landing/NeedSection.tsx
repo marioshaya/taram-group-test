@@ -24,7 +24,7 @@ export default function NeedSection() {
           Des <span className="text-4xl text-primary">offres</span> adaptées à
           chaque <span className="text-4xl text-primary">besoin</span>
         </h3>
-        <div className="flex flex-col min-h-[80vh] md:flex-row md:items-center">
+        <div className="flex flex-col gap-6 min-h-[80vh] md:flex-row md:items-center">
           <div className="relative w-full h-full min-h-[250px] sm:min-h-[400px] md:min-h-[500px] rounded-2xl overflow-hidden">
             <Image
               className="object-cover object-top"
