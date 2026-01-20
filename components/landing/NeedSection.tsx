@@ -1,11 +1,16 @@
 "use client"
 
 import Image from "next/image"
+import { useState } from "react"
+import { FaCircleCheck, FaCirclePlus } from "react-icons/fa6"
+import { MdKeyboardBackspace } from "react-icons/md"
 import { needsData } from "@/data"
 import PrendreRdvCta from "../buttons/PrendreRdvCta"
 import Section from "../Section"
 
 export default function NeedSection() {
+  const [activeNeed, setActiveNeed] = useState("")
+
   return (
     <Section isNotMaxWidth>
       <div className="w-full space-y-4">
@@ -23,25 +28,59 @@ export default function NeedSection() {
               alt="Conception web"
             />
           </div>
-          <div className="w-full">
-            <h4 className="text-2xl text-primary font-extrabold py-4 md:pt-0">
-              Vos besoins concernent ...
-            </h4>
-            <div className="flex flex-col gap-y-3">
-              {needsData.map((need) => {
-                const Icon = need.icon
-                return (
+          <div className="w-full relative border">
+            <div className="w-full">
+              <h4 className="text-2xl text-primary font-extrabold py-4 md:pt-0">
+                Vos besoins concernent ...
+              </h4>
+              <div className="flex flex-col gap-y-3">
+                {needsData.map((need) => {
+                  const Icon = need.icon
+                  return (
+                    <button
+                      className="w-full flex items-center gap-x-2 font-bold border-2 border-white/10 bg-white/5 hover:text-primary hover:border-primary transition-all duration-300 ease-in-out hover:cursor-pointer px-4 py-3 rounded-xl"
+                      key={need.id}
+                      onClick={() => setActiveNeed(need.id)}
+                      type="button"
+                    >
+                      <Icon />
+                      <div className="">{need.title}</div>
+                    </button>
+                  )
+                })}
+              </div>
+            </div>
+            {activeNeed && activeNeed === "web" && (
+              <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center gap-y-4 bg-background">
+                <div className="text-2xl font-extrabold text-primary">
+                  Avez-vous déjà un site web ?
+                </div>
+                <div className="text-xl space-y-4">
                   <button
-                    className="w-full flex items-center gap-x-2 font-bold border-2 border-white/10 bg-white/5 hover:text-primary hover:border-primary transition-all duration-300 ease-in-out hover:cursor-pointer px-4 py-3 rounded-xl"
-                    key={need.title}
+                    className="w-full flex items-center gap-x-2 py-3 px-5 border border-white/20 bg-white/5 rounded-xl font-extrabold transition-all duration-200 ease-in-out hover:border-primary hover:text-primary hover:bg-white/10"
                     type="button"
                   >
-                    <Icon />
-                    <div className="">{need.title}</div>
+                    <FaCircleCheck />
+                    <div className="">Oui, j'ai déjà un site</div>
                   </button>
-                )
-              })}
-            </div>
+                  <button
+                    className="w-full flex items-center gap-x-2 py-3 px-5 border border-white/20 bg-white/5 rounded-xl font-extrabold transition-all duration-200 ease-in-out hover:border-primary hover:text-primary hover:bg-white/10"
+                    type="button"
+                  >
+                    <FaCirclePlus />
+                    <div className="">Non, je souhaite en créer un</div>
+                  </button>
+                  <button
+                    className="flex items-center gap-x-2 text-sm"
+                    onClick={() => setActiveNeed("")}
+                    type="button"
+                  >
+                    <MdKeyboardBackspace />
+                    <div className="">Retour</div>
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </div>
         <div className="w-full flex items-center justify-center">
