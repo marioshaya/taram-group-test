@@ -3,13 +3,14 @@
 import Image from "next/image"
 import { useState } from "react"
 import { FaCalendarAlt } from "react-icons/fa"
-import { FaCircleCheck, FaCirclePlus } from "react-icons/fa6"
 import { LiaLongArrowAltRightSolid } from "react-icons/lia"
 import { MdKeyboardBackspace } from "react-icons/md"
 import { TfiCheck } from "react-icons/tfi"
 import { needAutomationIncludes, needsData } from "@/data"
 import type { NeedsIdType } from "@/types"
+import NoBtn from "../buttons/NoBtn"
 import PrendreRdvCta from "../buttons/PrendreRdvCta"
+import YesBtn from "../buttons/YesBtn"
 import Section from "../Section"
 
 export default function NeedSection() {
@@ -63,20 +64,11 @@ export default function NeedSection() {
                   Avez-vous déjà un site web ?
                 </div>
                 <div className="text-xl space-y-4">
-                  <button
-                    className="w-full flex items-center gap-x-2 py-3 px-5 border border-white/20 bg-white/5 rounded-xl font-extrabold transition-all duration-200 ease-in-out hover:border-primary hover:text-primary hover:bg-white/10"
-                    type="button"
-                  >
-                    <FaCircleCheck />
-                    <div className="">Oui, j'ai déjà un site</div>
-                  </button>
-                  <button
-                    className="w-full flex items-center gap-x-2 py-3 px-5 border border-white/20 bg-white/5 rounded-xl font-extrabold transition-all duration-200 ease-in-out hover:border-primary hover:text-primary hover:bg-white/10"
-                    type="button"
-                  >
-                    <FaCirclePlus />
-                    <div className="">Non, je souhaite en créer un</div>
-                  </button>
+                  <YesBtn onClick={() => {}} text="Oui, j'ai déjà un site" />
+                  <NoBtn
+                    onClick={() => {}}
+                    text="Non, je souhaite en créer un"
+                  />
                   <button
                     className="flex items-center gap-x-2 text-sm"
                     onClick={() => setActiveNeed(null)}
@@ -95,20 +87,11 @@ export default function NeedSection() {
                   Avez-vous déjà une application mobile ?
                 </div>
                 <div className="text-xl space-y-4">
-                  <button
-                    className="w-full flex items-center gap-x-2 py-3 px-5 border border-white/20 bg-white/5 rounded-xl font-extrabold transition-all duration-200 ease-in-out hover:border-primary hover:text-primary hover:bg-white/10"
-                    type="button"
-                  >
-                    <FaCircleCheck />
-                    <div className="">Oui, j'ai déjà une app</div>
-                  </button>
-                  <button
-                    className="w-full flex items-center gap-x-2 py-3 px-5 border border-white/20 bg-white/5 rounded-xl font-extrabold transition-all duration-200 ease-in-out hover:border-primary hover:text-primary hover:bg-white/10"
-                    type="button"
-                  >
-                    <FaCirclePlus />
-                    <div className="">Non, je souhaite en créer une</div>
-                  </button>
+                  <YesBtn onClick={() => {}} text="Oui, j'ai déjà une app" />
+                  <NoBtn
+                    onClick={() => {}}
+                    text="Non, je souhaite en créer une"
+                  />
                   <button
                     className="flex items-center gap-x-2 text-sm"
                     onClick={() => setActiveNeed(null)}
