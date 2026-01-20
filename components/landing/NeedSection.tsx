@@ -1,24 +1,7 @@
 import Image from "next/image"
-import { CiGlobe } from "react-icons/ci"
-import { MdOutlinePhoneIphone } from "react-icons/md"
-import { RiRobot2Fill } from "react-icons/ri"
+import { needsData } from "@/data"
 import PrendreRdvCta from "../buttons/PrendreRdvCta"
 import Section from "../Section"
-
-const needsData = [
-  {
-    title: "Un site web",
-    icon: CiGlobe
-  },
-  {
-    title: "Une application mobile",
-    icon: MdOutlinePhoneIphone
-  },
-  {
-    title: "De l'automatisation",
-    icon: RiRobot2Fill
-  }
-]
 
 export default function NeedSection() {
   return (
