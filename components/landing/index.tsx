@@ -8,7 +8,7 @@ const LandingSection = () => {
     <Section>
       <div className="text-background flex items-center justify-center rounded-full bg-white px-8 py-3 shadow-[0_18px_48px_rgba(0,0,0,0.32),0_0_20px_rgba(113,221,174,0.4),0_0_20px_rgba(113,221,174,0.2)]">
         <Image src="/search.png" height={48} width={48} alt="Logo" />
-        <div className="overflow-hidden text-sm font-extrabold text-ellipsis uppercase sm:text-lg sm:overflow-visible md:text-xl lg:text-2xl whitespace-nowrap xl:text-3xl">
+        <div className="overflow-hidden text-sm font-[1000] text-ellipsis uppercase sm:text-lg sm:overflow-visible md:text-xl lg:text-2xl whitespace-nowrap xl:text-3xl">
           Créer un site web <u>vraiement</u> unique
         </div>
       </div>
