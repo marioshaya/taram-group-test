@@ -8,6 +8,7 @@ import { MdKeyboardBackspace } from "react-icons/md"
 import { TfiCheck } from "react-icons/tfi"
 import { needAutomationIncludes, needsData } from "@/data"
 import type { NeedsIdType } from "@/types"
+import BackBtn from "../buttons/BackBtn"
 import NoBtn from "../buttons/NoBtn"
 import PrendreRdvCta from "../buttons/PrendreRdvCta"
 import YesBtn from "../buttons/YesBtn"
@@ -69,14 +70,7 @@ export default function NeedSection() {
                     onClick={() => {}}
                     text="Non, je souhaite en créer un"
                   />
-                  <button
-                    className="flex items-center gap-x-2 text-sm"
-                    onClick={() => setActiveNeed(null)}
-                    type="button"
-                  >
-                    <MdKeyboardBackspace />
-                    <div className="">Retour</div>
-                  </button>
+                  <BackBtn onClick={() => setActiveNeed(null)} />
                 </div>
               </div>
             )}
