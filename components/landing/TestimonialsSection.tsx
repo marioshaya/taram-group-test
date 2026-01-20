@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { FaStar } from "react-icons/fa6"
 import Section from "../Section"
 
 const testimonials = [
@@ -51,7 +52,11 @@ export default function TestimonialsSection() {
                 </div>
                 <div className="">
                   <div className="font-black text-xl">{item.company}</div>
-                  <div className="">{item.rating}</div>
+                  <div className="flex items-center gap-x-1">
+                    {[...Array(item.rating)].map((_, index) => (
+                      <FaStar key={index} />
+                    ))}
+                  </div>
                 </div>
               </div>
               <div className="flex items-center gap-x-2 rounded-full bg-background/10 p-1 font-bold">
