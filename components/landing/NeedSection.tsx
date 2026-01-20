@@ -32,7 +32,7 @@ export default function NeedSection() {
               alt="Conception web"
             />
           </div>
-          <div className="w-full relative">
+          <div className="w-full flex flex-col items-center justify-center relative">
             {!activeNeed && (
               <div className="w-full h-full">
                 <h4 className="text-2xl text-primary font-extrabold py-4 md:pt-0">
