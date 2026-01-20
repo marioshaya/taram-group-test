@@ -130,8 +130,17 @@ export default function NeedSection() {
                   <div className="">Recommencer</div>
                 </button>
                 <div className="rounded-2xl p-6 bg-linear-to-r from-primary to-primaryLight space-y-3">
-                  <div className="bg-white rounded-xl shadow-2xs py-2">
-                    <h3 className="text-2xl font-extrabold text-background">
+                  <div className="bg-white rounded-2xl shadow-2xs px-4 py-2 flex items-center gap-x-4">
+                    <div className="border border-primary rounded-xl bg-primaryLight/20 w-16 h-16 flex items-center justify-center shadow-xl p-2">
+                      <Image
+                        className=""
+                        src="/automatisation.png"
+                        height={32}
+                        width={32}
+                        alt="Automatisation"
+                      />
+                    </div>
+                    <h3 className="text-3xl font-[1000] text-background">
                       Automatisation
                     </h3>
                   </div>
