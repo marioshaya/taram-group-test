@@ -10,7 +10,7 @@ import TestimonialsSection from "@/components/landing/TestimonialsSection"
 
 export default function Home() {
   return (
-    <main className="bg-background flex flex-col items-center justify-center">
+    <main>
       <LandingSection />
       <DifferenceSection />
       <PortfolioSection />
