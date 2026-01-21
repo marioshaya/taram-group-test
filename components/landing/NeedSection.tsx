@@ -158,7 +158,7 @@ export default function NeedSection() {
             )}
 
             {/* Main: choice among web, mobile, automation — only when not in a sub-flow */}
-            {!activeNeed && !activeWeb && (
+            {!activeNeed && !activeNewWeb && !activeWeb && (
               <div className="w-full h-full">
                 <h4 className="text-2xl text-primary font-extrabold py-4 md:pt-0">
                   Vos besoins concernent ...
@@ -239,18 +239,8 @@ export default function NeedSection() {
 
             {activeNeed === "automation" && (
               <div className="w-full h-full flex flex-col justify-center gap-y-4 bg-background">
-                <div className="flex flex-col md:flex-row md:items-center justify-between">
-                  <h3 className="font-extrabold text-3xl">Offre recommandée</h3>
-                  <BackBtn
-                    onClick={() => {
-                      setActiveNeed(null)
-                      setActiveWeb(null)
-                    }}
-                  />
-                </div>
                 <BookAFreeCall
                   onClick={() => {
-                    setActiveNewWeb(null)
                     setActiveNeed(null)
                     setActiveWeb(null)
                   }}
