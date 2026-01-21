@@ -23,6 +23,8 @@ export default function NeedSection() {
     useState<ExistingWebType | null>(null)
 
   const [activeMobile, setActiveMobile] = useState<ExistingOrNewType>(null)
+  const [activeExistingMobile, setActiveExistingMobile] =
+    useState<ExistingWebType | null>(null)
 
   return (
     <Section isNotMaxWidth>
@@ -46,7 +48,9 @@ export default function NeedSection() {
             {!activeNeed &&
               !activeNewWeb &&
               !activeWeb &&
-              !activeExistingWeb && (
+              !activeMobile &&
+              !activeExistingWeb &&
+              !activeExistingMobile && (
                 <div className="w-full h-full">
                   <h4 className="text-2xl text-primary font-extrabold py-4 md:pt-0">
                     Vos besoins concernent ...
@@ -247,22 +251,78 @@ export default function NeedSection() {
               />
             )}
 
+            {/* Mobile: question — avez‑vous déjà une app ? */}
             {activeNeed === "mobile" && (
               <StepList
-                title="Avez-vous déjà une application ?"
-                onClick={() => setActiveNeed(null)}
+                title="Avez-vous déjà une application mobile ?"
+                onClick={() => {
+                  setActiveMobile(null)
+                  setActiveNeed(null)
+                }}
               >
                 <NeedBtn
                   icon="yes"
-                  onClick={() => {}}
+                  onClick={() => {
+                    setActiveMobile("existing")
+                    setActiveNeed(null)
+                  }}
                   text="Oui, j'ai déjà une app"
                 />
                 <NeedBtn
                   icon="no"
-                  onClick={() => {}}
+                  onClick={() => {
+                    setActiveMobile("new")
+                    setActiveNeed(null)
+                  }}
                   text="Non, je souhaite en créer une"
                 />
               </StepList>
+            )}
+
+            {activeMobile && activeMobile === "existing" && (
+              <StepList
+                title="Quelle prestation vous intéresse ?"
+                onClick={() => {
+                  setActiveNeed("mobile")
+                }}
+              >
+                <NeedBtn
+                  icon="rebrand"
+                  text="Refonte"
+                  onClick={() => {
+                    setActiveExistingMobile("rebrand")
+                    setActiveMobile(null)
+                    setActiveNeed(null)
+                  }}
+                />
+                <NeedBtn
+                  icon="tool"
+                  text="Maintenance"
+                  onClick={() => {
+                    setActiveExistingMobile("maintenance")
+                    setActiveMobile(null)
+                  }}
+                />
+                <NeedBtn
+                  icon="bug"
+                  text="Correction de bugs"
+                  onClick={() => {
+                    setActiveExistingMobile("debug")
+                    setActiveMobile(null)
+                  }}
+                />
+              </StepList>
+            )}
+
+            {activeExistingMobile === "rebrand" && (
+              <BookAFreeCall
+                title="Refonte App Mobile"
+                onClick={() => {
+                  setActiveExistingMobile(null)
+                  setActiveMobile(null)
+                }}
+                paragraph="Modernisez votre application mobile existante avec une nouvelle interface, de meilleures performances et les dernières fonctionnalités."
+              />
             )}
 
             {activeNeed === "automation" && (

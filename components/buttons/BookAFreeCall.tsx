@@ -4,6 +4,7 @@ import { LiaLongArrowAltRightSolid } from "react-icons/lia"
 import { TfiCheck } from "react-icons/tfi"
 import {
   needAutomationIncludes,
+  needMobileRebrand,
   needWebDebug,
   needWebEcommerce,
   needWebMaintenance,
@@ -45,6 +46,9 @@ const BookAFreeCall = ({ title, paragraph, onClick }: BookFreeCallIO) => {
         break
       case "SaaS":
         includes = needWebSaas
+        break
+      case "Refonte App Mobile":
+        includes = needMobileRebrand
         break
       default:
         includes = []

@@ -75,3 +75,9 @@ export const needWebSaas = [
   "Parcours utilisateur testé en conditions réelles",
   "Monitoring et support utilisateurs inclus"
 ]
+
+export const needMobileRebrand = [
+  "Audit complet de l'app existante",
+  "Refonte UI/UX moderne et intuitive",
+  "Optimisation des performances"
+]
