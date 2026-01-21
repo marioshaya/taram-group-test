@@ -325,6 +325,17 @@ export default function NeedSection() {
               />
             )}
 
+            {activeExistingMobile === "maintenance" && (
+              <BookAFreeCall
+                title="Maintenance"
+                onClick={() => {
+                  setActiveExistingMobile(null)
+                  setActiveMobile(null)
+                }}
+                paragraph="Sécurisez votre site, corrigez les bugs et bénéficiez d'un support réactif par un interlocuteur unique."
+              />
+            )}
+
             {activeNeed === "automation" && (
               <BookAFreeCall
                 onClick={() => {
