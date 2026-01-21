@@ -82,6 +82,18 @@ export default function NeedSection() {
               />
             )}
 
+            {activeNewWeb && activeNewWeb === "saas" && (
+              <BookAFreeCall
+                title="SaaS"
+                onClick={() => {
+                  setActiveNewWeb(null)
+                  setActiveNeed(null)
+                  setActiveWeb(null)
+                }}
+                paragraph="Développez votre solution SaaS innovante avec une équipe qui gère design, produit, développement et suivi."
+              />
+            )}
+
             {/* Web sub: new site — création */}
             {activeWeb === "new" && (
               <StepList
@@ -107,7 +119,14 @@ export default function NeedSection() {
                   }}
                   text="E-commerce"
                 />
-                <NeedBtn icon="saas" onClick={() => {}} text="SaaS" />
+                <NeedBtn
+                  icon="saas"
+                  onClick={() => {
+                    setActiveNewWeb("saas")
+                    setActiveWeb(null)
+                  }}
+                  text="SaaS"
+                />
               </StepList>
             )}
 

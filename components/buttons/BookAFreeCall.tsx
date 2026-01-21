@@ -6,6 +6,7 @@ import {
   needAutomationIncludes,
   needWebEcommerce,
   needWebMaintenance,
+  needWebSaas,
   needWebSiteVitrine
 } from "@/data"
 import { slugify } from "@/utils"
@@ -33,6 +34,9 @@ const BookAFreeCall = ({ title, paragraph, onClick }: BookFreeCallIO) => {
         break
       case "E-commerce":
         includes = needWebEcommerce
+        break
+      case "SaaS":
+        includes = needWebSaas
         break
       default:
         includes = []

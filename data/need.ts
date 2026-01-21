@@ -57,3 +57,9 @@ export const needWebEcommerce = [
   "Tunnel de commande optimisé mobile",
   "Email marketing automatisé dès le lancement"
 ]
+
+export const needWebSaas = [
+  "Prototype cliquable offert",
+  "Parcours utilisateur testé en conditions réelles",
+  "Monitoring et support utilisateurs inclus"
+]
