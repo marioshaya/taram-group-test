@@ -168,18 +168,16 @@ export default function NeedSection() {
             )}
 
             {activeNeed === "automation" && (
-              <div className="w-full h-full flex flex-col justify-center gap-y-4 bg-background">
-                <BookAFreeCall
-                  onClick={() => {
-                    setActiveNeed(null)
-                    setActiveWeb(null)
-                  }}
-                  title="Automatisation"
-                  paragraph="Automatisez vos processus métier avec des workflows
+              <BookAFreeCall
+                onClick={() => {
+                  setActiveNeed(null)
+                  setActiveWeb(null)
+                }}
+                title="Automatisation"
+                paragraph="Automatisez vos processus métier avec des workflows
                     intelligents : devis, signature, facturation, notifications
                     et rapports."
-                />
-              </div>
+              />
             )}
           </div>
         </div>
