@@ -10,9 +10,7 @@ import type { NeedsIdType } from "@/types"
 import BackBtn from "../buttons/BackBtn"
 import BookAFreeCall from "../buttons/BookAFreeCall"
 import NeedBtn from "../buttons/NeedBtn"
-import NoBtn from "../buttons/NoBtn"
 import PrendreRdvCta from "../buttons/PrendreRdvCta"
-import YesBtn from "../buttons/YesBtn"
 import Section from "../Section"
 
 export default function NeedSection() {
@@ -187,8 +185,13 @@ export default function NeedSection() {
                   Avez-vous déjà une application mobile ?
                 </div>
                 <div className="text-xl space-y-4">
-                  <YesBtn onClick={() => {}} text="Oui, j'ai déjà une app" />
-                  <NoBtn
+                  <NeedBtn
+                    icon="yes"
+                    onClick={() => {}}
+                    text="Oui, j'ai déjà une app"
+                  />
+                  <NeedBtn
+                    icon="no"
                     onClick={() => {}}
                     text="Non, je souhaite en créer une"
                   />
