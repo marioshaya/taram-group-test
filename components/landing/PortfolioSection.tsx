@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { portfolioProjects } from "@/data"
 import PrendreRdvCta from "../buttons/PrendreRdvCta"
-import Section from "../Section"
+import Section from "../section/Section"
 
 const PortfolioSection = () => {
   return (

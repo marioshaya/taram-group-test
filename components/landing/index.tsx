@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { FaCalendarAlt } from "react-icons/fa"
 import { IoMdArrowRoundDown } from "react-icons/io"
-import Section from "@/components/Section"
+import Section from "@/components/section/Section"
 
 const LandingSection = () => {
   return (

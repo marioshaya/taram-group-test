@@ -1,7 +1,7 @@
 "use client"
 
 import CalendlyInline from "../CalendlyInline"
-import Section from "../Section"
+import Section from "../section/Section"
 
 const SchedulingSection = () => {
   return (

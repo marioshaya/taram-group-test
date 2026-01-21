@@ -4,7 +4,7 @@ import clsx from "clsx"
 import { useState } from "react"
 import { PiCaretDown } from "react-icons/pi"
 import { faqData } from "@/data"
-import Section from "../Section"
+import Section from "../section/Section"
 
 export default function FaqSection() {
   const [openKey, setOpenKey] = useState<string | null>(null)

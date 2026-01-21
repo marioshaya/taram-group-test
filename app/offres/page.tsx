@@ -1,5 +1,5 @@
 import NeedSection from "@/components/landing/NeedSection"
-import Section from "@/components/Section"
+import Section from "@/components/section/Section"
 
 export default function OffresPage() {
   return (

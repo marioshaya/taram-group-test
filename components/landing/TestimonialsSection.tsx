@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { FaStar } from "react-icons/fa6"
 import { testimonials } from "@/data"
-import Section from "../Section"
+import Section from "../section/Section"
 
 export default function TestimonialsSection() {
   return (

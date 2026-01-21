@@ -1,5 +1,5 @@
 import Link from "next/link"
-import Section from "../Section"
+import Section from "../section/Section"
 
 export default function NewsLetter() {
   return (

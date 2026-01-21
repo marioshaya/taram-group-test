@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { differences } from "@/data"
-import Section from "../Section"
+import Section from "../section/Section"
 
 const DifferenceSection = () => {
   return (

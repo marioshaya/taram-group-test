@@ -12,7 +12,7 @@ import type {
 import BookAFreeCall from "../buttons/BookAFreeCall"
 import NeedBtn from "../buttons/NeedBtn"
 import PrendreRdvCta from "../buttons/PrendreRdvCta"
-import Section from "../Section"
+import Section from "../section/Section"
 import StepList from "../wrapper/StepList"
 
 export default function NeedSection() {
