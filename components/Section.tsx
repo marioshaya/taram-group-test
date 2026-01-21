@@ -14,7 +14,7 @@ const Section = ({
     <section
       className={clsx(
         height ? height : "min-h-dvh",
-        "not-last:border-b border-white/10 w-full"
+        "not-last:border-b border-white/10 w-full py-8"
       )}
     >
       <div
