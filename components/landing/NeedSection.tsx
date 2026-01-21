@@ -347,6 +347,18 @@ export default function NeedSection() {
               />
             )}
 
+            {activeMobile && activeMobile === "new" && (
+              <BookAFreeCall
+                title="Application Mobile"
+                paragraph="Créez votre application mobile native ou cross-platform avec une interface intuitive et des performances optimales."
+                onClick={() => {
+                  setActiveMobile(null)
+                  setActiveNeed(null)
+                  setActiveWeb(null)
+                }}
+              />
+            )}
+
             {activeNeed === "automation" && (
               <BookAFreeCall
                 onClick={() => {

@@ -81,3 +81,9 @@ export const needMobileRebrand = [
   "Refonte UI/UX moderne et intuitive",
   "Optimisation des performances"
 ]
+
+export const needMobileNew = [
+  "Application native iOS et Android",
+  "Interface utilisateur intuitive et moderne",
+  "Publication sur les stores incluse"
+]
