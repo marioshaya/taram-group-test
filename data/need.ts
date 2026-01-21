@@ -33,3 +33,9 @@ export const needAutomationIncludes = [
   "Onboarding client guidé",
   "Suivi des performances automatisé"
 ]
+
+export const needWebNewIncludes = [
+  "Site vitrine ou e-commerce",
+  "Design sur mesure et responsive",
+  "Hébergement et maintenance inclus"
+]

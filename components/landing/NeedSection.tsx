@@ -4,11 +4,11 @@ import Image from "next/image"
 import { useState } from "react"
 import { FaCalendarAlt } from "react-icons/fa"
 import { LiaLongArrowAltRightSolid } from "react-icons/lia"
-import { MdKeyboardBackspace } from "react-icons/md"
 import { TfiCheck } from "react-icons/tfi"
-import { needAutomationIncludes, needsData } from "@/data"
+import { needAutomationIncludes, needsData, needWebNewIncludes } from "@/data"
 import type { NeedsIdType } from "@/types"
 import BackBtn from "../buttons/BackBtn"
+import NeedBtn from "../buttons/NeedBtn"
 import NoBtn from "../buttons/NoBtn"
 import PrendreRdvCta from "../buttons/PrendreRdvCta"
 import YesBtn from "../buttons/YesBtn"
@@ -16,7 +16,7 @@ import Section from "../Section"
 
 export default function NeedSection() {
   const [activeNeed, setActiveNeed] = useState<NeedsIdType | null>(null)
-  const [isRebranding, setIsRebranding] = useState<boolean | null>(null)
+  const [activeWeb, setActiveWeb] = useState<"existing" | "new" | null>(null)
 
   return (
     <Section isNotMaxWidth>
@@ -36,7 +36,93 @@ export default function NeedSection() {
             />
           </div>
           <div className="w-full flex flex-col items-center justify-center relative">
-            {!activeNeed && (
+            {/* Web sub: existing site — Maintenance, bugs, refonte */}
+            {activeWeb === "existing" && (
+              <div className="w-full space-y-2">
+                <h4 className="text-2xl text-primary font-extrabold md:pt-0">
+                  Quelle prestation vous intéresse ?
+                </h4>
+                <NeedBtn icon="tool" onClick={() => {}} text="Maintenance" />
+                <NeedBtn
+                  icon="bug"
+                  onClick={() => {}}
+                  text="Correction de bugs"
+                />
+                <NeedBtn icon="rebrand" onClick={() => {}} text="Refonte" />
+                <BackBtn
+                  onClick={() => {
+                    setActiveWeb(null)
+                    setActiveNeed("web")
+                  }}
+                />
+              </div>
+            )}
+
+            {/* Web sub: new site — création */}
+            {activeWeb === "new" && (
+              <div className="w-full h-full flex flex-col justify-center gap-y-4 bg-background">
+                <div className="flex flex-col md:flex-row md:items-center justify-between">
+                  <h3 className="font-extrabold text-3xl">
+                    Création de site web
+                  </h3>
+                  <BackBtn
+                    onClick={() => {
+                      setActiveWeb(null)
+                      setActiveNeed("web")
+                    }}
+                  />
+                </div>
+                <div className="rounded-2xl p-6 bg-linear-to-r from-primary to-primaryLight space-y-3">
+                  <p className="text-sm text-background/90">
+                    Un site sur mesure, moderne et responsive pour développer
+                    votre présence en ligne.
+                  </p>
+                  <div className="w-full space-y-2">
+                    <h4 className="uppercase font-semibold text-background/70">
+                      Ce qui est inclus
+                    </h4>
+                    <div className="rounded-2xl border border-white/30 bg-white/20 p-4 w-full space-y-4">
+                      {needWebNewIncludes.map((include) => (
+                        <div
+                          className="flex items-center gap-x-4 text-background rounded-full"
+                          key={include}
+                        >
+                          <div className="w-6 h-6 text-background border border-white/75 bg-white/40 rounded-full flex items-center justify-center shadow-xl">
+                            <TfiCheck className="text-xs" />
+                          </div>
+                          <div className="font-medium leading-relaxed">
+                            {include}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <button
+                    className="bg-background shadow-2xl font-extrabold w-full flex items-center justify-center gap-x-3 py-4 rounded-2xl mt-8 hover:scale-105 transition-all ease-in-out duration-300"
+                    onClick={() => {
+                      typeof window !== "undefined" &&
+                        (
+                          window as unknown as {
+                            Calendly?: {
+                              initPopupWidget?: (o: { url: string }) => void
+                            }
+                          }
+                        ).Calendly?.initPopupWidget?.({
+                          url: "https://calendly.com/marioshaya/quick-30-minutes-contact-meeting"
+                        })
+                    }}
+                    type="button"
+                  >
+                    <FaCalendarAlt />
+                    <span>Réservez un appel gratuit</span>
+                    <LiaLongArrowAltRightSolid />
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* Main: choice among web, mobile, automation — only when not in a sub-flow */}
+            {!activeNeed && !activeWeb && (
               <div className="w-full h-full">
                 <h4 className="text-2xl text-primary font-extrabold py-4 md:pt-0">
                   Vos besoins concernent ...
@@ -60,29 +146,41 @@ export default function NeedSection() {
               </div>
             )}
 
-            {activeNeed && activeNeed === "web" && (
+            {/* Web: question — avez‑vous déjà un site ? */}
+            {activeNeed === "web" && (
               <div className="w-full h-full flex flex-col justify-center gap-y-4 bg-background">
                 <div className="text-2xl font-extrabold text-primary">
                   Avez-vous déjà un site web ?
                 </div>
                 <div className="text-xl space-y-4">
-                  <YesBtn
-                    onClick={() => setIsRebranding(true)}
+                  <NeedBtn
+                    icon="yes"
+                    onClick={() => {
+                      setActiveNeed(null)
+                      setActiveWeb("existing")
+                    }}
                     text="Oui, j'ai déjà un site"
                   />
-                  <NoBtn
-                    onClick={() => setIsRebranding(false)}
+                  <NeedBtn
+                    icon="no"
+                    onClick={() => {
+                      setActiveWeb("new")
+                      setActiveNeed(null)
+                    }}
                     text="Non, je souhaite en créer un"
                   />
-                  <BackBtn onClick={() => setActiveNeed(null)} />
+
+                  <BackBtn
+                    onClick={() => {
+                      setActiveNeed(null)
+                      setActiveWeb(null)
+                    }}
+                  />
                 </div>
               </div>
             )}
 
-            {/* {isRebranding && isRebranding ? () : ()
-            } */}
-
-            {activeNeed && activeNeed === "mobile" && (
+            {activeNeed === "mobile" && (
               <div className="w-full h-full flex flex-col justify-center gap-y-4 bg-background">
                 <div className="text-2xl font-extrabold text-primary">
                   Avez-vous déjà une application mobile ?
@@ -93,29 +191,21 @@ export default function NeedSection() {
                     onClick={() => {}}
                     text="Non, je souhaite en créer une"
                   />
-                  <button
-                    className="flex items-center gap-x-2 text-sm"
-                    onClick={() => setActiveNeed(null)}
-                    type="button"
-                  >
-                    <MdKeyboardBackspace />
-                    <div className="">Retour</div>
-                  </button>
+                  <BackBtn onClick={() => setActiveNeed(null)} />
                 </div>
               </div>
             )}
 
-            {activeNeed && activeNeed === "automation" && (
+            {activeNeed === "automation" && (
               <div className="w-full h-full flex flex-col justify-center gap-y-4 bg-background">
                 <div className="flex flex-col md:flex-row md:items-center justify-between">
                   <h3 className="font-extrabold text-3xl">Offre recommandée</h3>
-                  <button
-                    className="text-left underline text-sm"
-                    onClick={() => setActiveNeed(null)}
-                    type="button"
-                  >
-                    <div className="">Recommencer</div>
-                  </button>
+                  <BackBtn
+                    onClick={() => {
+                      setActiveNeed(null)
+                      setActiveWeb(null)
+                    }}
+                  />
                 </div>
                 <div className="rounded-2xl p-6 bg-linear-to-r from-primary to-primaryLight space-y-3">
                   <div className="bg-white rounded-2xl shadow-2xs px-4 py-4 flex items-center gap-x-4">
@@ -159,10 +249,22 @@ export default function NeedSection() {
                   </div>
                   <button
                     className="bg-background shadow-2xl font-extrabold w-full flex items-center justify-center gap-x-3 py-4 rounded-2xl mt-8 hover:scale-105 transition-all ease-in-out duration-300"
+                    onClick={() => {
+                      typeof window !== "undefined" &&
+                        (
+                          window as unknown as {
+                            Calendly?: {
+                              initPopupWidget?: (o: { url: string }) => void
+                            }
+                          }
+                        ).Calendly?.initPopupWidget?.({
+                          url: "https://calendly.com/marioshaya/quick-30-minutes-contact-meeting"
+                        })
+                    }}
                     type="button"
                   >
                     <FaCalendarAlt />
-                    <div className="">Réservez un appel gratuit</div>
+                    <span>Réservez un appel gratuit</span>
                     <LiaLongArrowAltRightSolid />
                   </button>
                 </div>
