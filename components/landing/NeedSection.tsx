@@ -153,24 +153,21 @@ export default function NeedSection() {
             )}
 
             {activeNeed === "mobile" && (
-              <div className="w-full h-full flex flex-col justify-center gap-y-4 bg-background">
-                <div className="text-2xl font-extrabold text-primary">
-                  Avez-vous déjà une application mobile ?
-                </div>
-                <div className="text-xl space-y-4">
-                  <NeedBtn
-                    icon="yes"
-                    onClick={() => {}}
-                    text="Oui, j'ai déjà une app"
-                  />
-                  <NeedBtn
-                    icon="no"
-                    onClick={() => {}}
-                    text="Non, je souhaite en créer une"
-                  />
-                  <BackBtn onClick={() => setActiveNeed(null)} />
-                </div>
-              </div>
+              <StepList
+                title="Avez-vous déjà une application ?"
+                onClick={() => setActiveNeed(null)}
+              >
+                <NeedBtn
+                  icon="yes"
+                  onClick={() => {}}
+                  text="Oui, j'ai déjà une app"
+                />
+                <NeedBtn
+                  icon="no"
+                  onClick={() => {}}
+                  text="Non, je souhaite en créer une"
+                />
+              </StepList>
             )}
 
             {activeNeed === "automation" && (
