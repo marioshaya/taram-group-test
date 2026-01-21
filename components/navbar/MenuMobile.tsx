@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation"
 import { FaTimes } from "react-icons/fa"
 import { FaPhone } from "react-icons/fa6"
 import { navLinks } from "@/data"
-import { isLinkActive } from "@/utils/"
+import { isLinkActive } from "@/utils"
 import PrendreRdvBtn from "../buttons/PrendreRdv"
 
 interface MenuMobileProps {

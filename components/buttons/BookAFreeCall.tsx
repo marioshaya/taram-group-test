@@ -7,6 +7,7 @@ import {
   needWebMaintenance,
   needWebSiteVitrine
 } from "@/data"
+import { slugify } from "@/utils"
 import BackBtn from "./BackBtn"
 
 interface BookFreeCallIO {
@@ -46,11 +47,7 @@ const BookAFreeCall = ({ title, paragraph, onClick }: BookFreeCallIO) => {
         <div className="bg-white rounded-2xl shadow-2xs px-4 py-4 flex items-center gap-x-4">
           <div className="border border-primary/50 rounded-2xl bg-primary/10 w-16 h-16 flex items-center justify-center shadow-xl p-2">
             <Image
-              className=""
-              src={`/${title
-                .toLowerCase()
-                .replace(/[^a-z0-9]+/g, "-")
-                .replace(/(^-|-$)/g, "")}.png`}
+              src={`/${slugify(title)}.png`}
               height={32}
               width={32}
               alt={title}
