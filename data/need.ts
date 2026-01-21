@@ -52,6 +52,12 @@ export const needWebDebug = [
   "Rapport détaillé des interventions"
 ]
 
+export const needWebRebrand = [
+  "Audit complet UX, SEO et technique",
+  "Roadmap claire : priorités, gains, budget",
+  "Mise en ligne sans interruption de service"
+]
+
 export const needWebSiteVitrine = [
   "Structure claire : accueil, services, avis, contact",
   "SEO local optimisé et formulaires connectés",

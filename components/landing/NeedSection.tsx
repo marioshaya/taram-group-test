@@ -58,7 +58,14 @@ export default function NeedSection() {
                   }}
                   text="Correction de bugs"
                 />
-                <NeedBtn icon="rebrand" onClick={() => {}} text="Refonte" />
+                <NeedBtn
+                  icon="rebrand"
+                  onClick={() => {
+                    setActiveExistingWeb("rebrand")
+                    setActiveWeb(null)
+                  }}
+                  text="Refonte"
+                />
                 <BackBtn
                   onClick={() => {
                     setActiveWeb(null)
@@ -91,6 +98,19 @@ export default function NeedSection() {
                   setActiveWeb(null)
                 }}
                 paragraph="Corrigez rapidement les bugs et problèmes techniques de votre site ou application avec un support réactif."
+              />
+            )}
+
+            {activeExistingWeb && activeExistingWeb === "rebrand" && (
+              <BookAFreeCall
+                title="Refonte & optimisation"
+                onClick={() => {
+                  setActiveExistingWeb(null)
+                  setActiveNewWeb(null)
+                  setActiveNeed(null)
+                  setActiveWeb(null)
+                }}
+                paragraph="Modernisez votre image, améliorez la vitesse et augmentez votre conversion sans repartir de zéro."
               />
             )}
 

@@ -7,6 +7,7 @@ import {
   needWebDebug,
   needWebEcommerce,
   needWebMaintenance,
+  needWebRebrand,
   needWebSaas,
   needWebSiteVitrine
 } from "@/data"
@@ -32,6 +33,9 @@ const BookAFreeCall = ({ title, paragraph, onClick }: BookFreeCallIO) => {
         break
       case "Correction de bugs":
         includes = needWebDebug
+        break
+      case "Refonte & optimisation":
+        includes = needWebRebrand
         break
       case "Site vitrine":
         includes = needWebSiteVitrine
