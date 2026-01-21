@@ -138,6 +138,34 @@ export default function NeedSection() {
               />
             )}
 
+            {/* Web: question — avez‑vous déjà un site ? */}
+            {activeNeed === "web" && (
+              <StepList
+                title="Avez-vous déjà un site web ?"
+                onClick={() => {
+                  setActiveNeed(null)
+                  setActiveWeb(null)
+                }}
+              >
+                <NeedBtn
+                  icon="yes"
+                  onClick={() => {
+                    setActiveNeed(null)
+                    setActiveWeb("existing")
+                  }}
+                  text="Oui, j'ai déjà un site"
+                />
+                <NeedBtn
+                  icon="no"
+                  onClick={() => {
+                    setActiveWeb("new")
+                    setActiveNeed(null)
+                  }}
+                  text="Non, je souhaite en créer un"
+                />
+              </StepList>
+            )}
+
             {/* Web sub: new site — création */}
             {activeWeb === "new" && (
               <StepList
@@ -210,34 +238,6 @@ export default function NeedSection() {
                 }}
                 paragraph="Développez votre solution SaaS innovante avec une équipe qui gère design, produit, développement et suivi."
               />
-            )}
-
-            {/* Web: question — avez‑vous déjà un site ? */}
-            {activeNeed === "web" && (
-              <StepList
-                title="Avez-vous déjà un site web ?"
-                onClick={() => {
-                  setActiveNeed(null)
-                  setActiveWeb(null)
-                }}
-              >
-                <NeedBtn
-                  icon="yes"
-                  onClick={() => {
-                    setActiveNeed(null)
-                    setActiveWeb("existing")
-                  }}
-                  text="Oui, j'ai déjà un site"
-                />
-                <NeedBtn
-                  icon="no"
-                  onClick={() => {
-                    setActiveWeb("new")
-                    setActiveNeed(null)
-                  }}
-                  text="Non, je souhaite en créer un"
-                />
-              </StepList>
             )}
 
             {activeNeed === "mobile" && (
