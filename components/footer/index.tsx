@@ -5,7 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { contactData, legalLinks, navLinks } from "@/data"
-import { isLinkActive } from "@/lib/isLinkActive"
+import { isLinkActive } from "@/utils/"
 
 const Footer = () => {
   const pathname = usePathname()
