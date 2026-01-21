@@ -72,10 +72,13 @@ export default function NeedSection() {
 
             {/* Web sub: new site — création */}
             {activeWeb === "new" && (
-              <div className="w-full">
-                <h4 className="text-2xl text-primary font-extrabold md:pt-0">
-                  Création de site web
-                </h4>
+              <StepList
+                title="Création de site web"
+                onClick={() => {
+                  setActiveWeb(null)
+                  setActiveNeed("web")
+                }}
+              >
                 <NeedBtn
                   icon="vitrine"
                   onClick={() => {
@@ -90,13 +93,7 @@ export default function NeedSection() {
                   text="E-commerce"
                 />
                 <NeedBtn icon="saas" onClick={() => {}} text="SaaS" />
-                <BackBtn
-                  onClick={() => {
-                    setActiveWeb(null)
-                    setActiveNeed("web")
-                  }}
-                />
-              </div>
+              </StepList>
             )}
 
             {/* Main: choice among web, mobile, automation — only when not in a sub-flow */}
