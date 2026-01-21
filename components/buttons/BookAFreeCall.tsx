@@ -57,6 +57,14 @@ const BookAFreeCall = ({ title, paragraph, onClick }: BookFreeCallIO) => {
     return includes
   }
 
+  const getImage = (title: string) => {
+    if (title.includes("Refonte")) {
+      return "/refonte-optimisation.png"
+    }
+
+    return `/${slugify(title)}.png`
+  }
+
   return (
     <div className="w-full h-full flex flex-col justify-center gap-y-4 bg-background">
       <div className="flex flex-col md:flex-row md:items-center justify-between">
@@ -66,12 +74,7 @@ const BookAFreeCall = ({ title, paragraph, onClick }: BookFreeCallIO) => {
       <div className="rounded-2xl p-6 bg-linear-to-r from-primary to-primaryLight space-y-3">
         <div className="bg-white rounded-2xl shadow-2xs px-4 py-4 flex items-center gap-x-4">
           <div className="border border-primary/50 rounded-2xl bg-primary/10 w-16 h-16 flex items-center justify-center shadow-xl p-2">
-            <Image
-              src={`/${slugify(title)}.png`}
-              height={32}
-              width={32}
-              alt={title}
-            />
+            <Image src={getImage(title)} height={32} width={32} alt={title} />
           </div>
           <h3 className="text-3xl font-[1000] text-background">{title}</h3>
         </div>
