@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { useState } from "react"
 import { needsData } from "@/data"
-import type { NeedsIdType, NewWebType } from "@/types"
+import type { ExistingWebType, NeedsIdType, NewWebType } from "@/types"
 import BackBtn from "../buttons/BackBtn"
 import BookAFreeCall from "../buttons/BookAFreeCall"
 import NeedBtn from "../buttons/NeedBtn"
@@ -15,6 +15,8 @@ export default function NeedSection() {
   const [activeNeed, setActiveNeed] = useState<NeedsIdType | null>(null)
   const [activeWeb, setActiveWeb] = useState<"existing" | "new" | null>(null)
   const [activeNewWeb, setActiveNewWeb] = useState<NewWebType | null>(null)
+  const [activeExistingWeb, setActiveExistingWeb] =
+    useState<ExistingWebType | null>(null)
 
   return (
     <Section isNotMaxWidth>
@@ -40,7 +42,14 @@ export default function NeedSection() {
                 <h4 className="text-2xl text-primary font-extrabold md:pt-0">
                   Quelle prestation vous intéresse ?
                 </h4>
-                <NeedBtn icon="tool" onClick={() => {}} text="Maintenance" />
+                <NeedBtn
+                  icon="tool"
+                  onClick={() => {
+                    setActiveExistingWeb("maintenance")
+                    setActiveWeb(null)
+                  }}
+                  text="Maintenance"
+                />
                 <NeedBtn
                   icon="bug"
                   onClick={() => {}}
@@ -54,6 +63,19 @@ export default function NeedSection() {
                   }}
                 />
               </div>
+            )}
+
+            {activeExistingWeb && activeExistingWeb === "maintenance" && (
+              <BookAFreeCall
+                title="Maintenance"
+                onClick={() => {
+                  setActiveExistingWeb(null)
+                  setActiveNewWeb(null)
+                  setActiveNeed(null)
+                  setActiveWeb(null)
+                }}
+                paragraph="Sécurisez votre site, corrigez les bugs et bénéficiez d'un support réactif par un interlocuteur unique."
+              />
             )}
 
             {activeNewWeb && activeNewWeb === "vitrine" && (
@@ -131,29 +153,32 @@ export default function NeedSection() {
             )}
 
             {/* Main: choice among web, mobile, automation — only when not in a sub-flow */}
-            {!activeNeed && !activeNewWeb && !activeWeb && (
-              <div className="w-full h-full">
-                <h4 className="text-2xl text-primary font-extrabold py-4 md:pt-0">
-                  Vos besoins concernent ...
-                </h4>
-                <div className="flex flex-col gap-y-3">
-                  {needsData.map((need) => {
-                    const Icon = need.icon
-                    return (
-                      <button
-                        className="w-full flex items-center gap-x-2 font-bold border-2 border-white/10 bg-white/5 hover:text-primary hover:border-primary transition-all duration-300 ease-in-out hover:cursor-pointer px-4 py-3 rounded-xl"
-                        key={need.id}
-                        onClick={() => setActiveNeed(need.id)}
-                        type="button"
-                      >
-                        <Icon />
-                        <div className="">{need.title}</div>
-                      </button>
-                    )
-                  })}
+            {!activeNeed &&
+              !activeNewWeb &&
+              !activeWeb &&
+              !activeExistingWeb && (
+                <div className="w-full h-full">
+                  <h4 className="text-2xl text-primary font-extrabold py-4 md:pt-0">
+                    Vos besoins concernent ...
+                  </h4>
+                  <div className="flex flex-col gap-y-3">
+                    {needsData.map((need) => {
+                      const Icon = need.icon
+                      return (
+                        <button
+                          className="w-full flex items-center gap-x-2 font-bold border-2 border-white/10 bg-white/5 hover:text-primary hover:border-primary transition-all duration-300 ease-in-out hover:cursor-pointer px-4 py-3 rounded-xl"
+                          key={need.id}
+                          onClick={() => setActiveNeed(need.id)}
+                          type="button"
+                        >
+                          <Icon />
+                          <div className="">{need.title}</div>
+                        </button>
+                      )
+                    })}
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
 
             {/* Web: question — avez‑vous déjà un site ? */}
             {activeNeed === "web" && (
