@@ -1,6 +1,7 @@
 import LandingSection from "@/components/landing"
 import DifferenceSection from "@/components/landing/DifferenceSection"
 import FaqSection from "@/components/landing/FaqSection"
+import LifeBuoy from "@/components/landing/LifeBuoy"
 import NeedSection from "@/components/landing/NeedSection"
 import NewsLetter from "@/components/landing/NewsLetter"
 import PortfolioSection from "@/components/landing/PortfolioSection"
@@ -14,6 +15,7 @@ export default function Home() {
       <DifferenceSection />
       <PortfolioSection />
       <NeedSection />
+      <LifeBuoy />
       <TestimonialsSection />
       <SchedulingSection />
       <FaqSection />

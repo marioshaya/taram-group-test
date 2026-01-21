@@ -3,17 +3,25 @@ import type { ReactNode } from "react"
 
 const Section = ({
   children,
+  height,
   isNotMaxWidth
 }: {
   children: ReactNode
+  height?: string
   isNotMaxWidth?: boolean
 }) => {
   return (
-    <section className="not-last:border-b border-white/10 w-full min-h-dvh">
+    <section
+      className={clsx(
+        height ? height : "min-h-dvh",
+        "not-last:border-b border-white/10 w-full"
+      )}
+    >
       <div
         className={clsx(
           !isNotMaxWidth && "max-w-7xl",
-          "mx-auto flex flex-col items-center justify-center min-h-screen gap-4 py-4 px-4 sm:px-6"
+          height ? height : "min-h-dvh",
+          "mx-auto flex flex-col items-center justify-center gap-4 py-4 px-4 sm:px-6 h-full"
         )}
       >
         {children}

@@ -15,6 +15,7 @@
   --color-background: #1c1c1c;
   --color-primaryLight: #2a9d7a;
   --color-secondary: #f3c16d;
+  --color-rose: #ffb3e0;
 }
 
 @media (prefers-color-scheme: dark) {
