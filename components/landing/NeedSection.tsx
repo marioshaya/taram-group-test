@@ -9,7 +9,7 @@ import type {
   NeedsIdType,
   NewWebType
 } from "@/types"
-import BookAFreeCall from "../buttons/BookAFreeCall"
+import BookAFreeCall from "../BookAFreeCall"
 import NeedBtn from "../buttons/NeedBtn"
 import PrendreRdvCta from "../buttons/PrendreRdvCta"
 import Section from "../section/Section"

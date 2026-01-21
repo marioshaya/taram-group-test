@@ -14,7 +14,7 @@ import {
   needWebSiteVitrine
 } from "@/data"
 import { slugify } from "@/utils"
-import BackBtn from "./BackBtn"
+import BackBtn from "./buttons/BackBtn"
 
 interface BookFreeCallIO {
   title: string
