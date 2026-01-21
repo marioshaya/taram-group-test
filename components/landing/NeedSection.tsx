@@ -36,6 +36,34 @@ export default function NeedSection() {
             />
           </div>
           <div className="w-full flex flex-col items-center justify-center relative">
+            {/* Main: choice among web, mobile, automation — only when not in a sub-flow */}
+            {!activeNeed &&
+              !activeNewWeb &&
+              !activeWeb &&
+              !activeExistingWeb && (
+                <div className="w-full h-full">
+                  <h4 className="text-2xl text-primary font-extrabold py-4 md:pt-0">
+                    Vos besoins concernent ...
+                  </h4>
+                  <div className="flex flex-col gap-y-3">
+                    {needsData.map((need) => {
+                      const Icon = need.icon
+                      return (
+                        <button
+                          className="w-full flex items-center gap-x-2 font-bold border-2 border-white/10 bg-white/5 hover:text-primary hover:border-primary transition-all duration-300 ease-in-out hover:cursor-pointer px-4 py-3 rounded-xl"
+                          key={need.id}
+                          onClick={() => setActiveNeed(need.id)}
+                          type="button"
+                        >
+                          <Icon />
+                          <div className="">{need.title}</div>
+                        </button>
+                      )
+                    })}
+                  </div>
+                </div>
+              )}
+
             {/* Web sub: existing site — Maintenance, bugs, refonte */}
             {activeWeb === "existing" && (
               <div className="w-full space-y-2">
@@ -187,34 +215,6 @@ export default function NeedSection() {
                 />
               </StepList>
             )}
-
-            {/* Main: choice among web, mobile, automation — only when not in a sub-flow */}
-            {!activeNeed &&
-              !activeNewWeb &&
-              !activeWeb &&
-              !activeExistingWeb && (
-                <div className="w-full h-full">
-                  <h4 className="text-2xl text-primary font-extrabold py-4 md:pt-0">
-                    Vos besoins concernent ...
-                  </h4>
-                  <div className="flex flex-col gap-y-3">
-                    {needsData.map((need) => {
-                      const Icon = need.icon
-                      return (
-                        <button
-                          className="w-full flex items-center gap-x-2 font-bold border-2 border-white/10 bg-white/5 hover:text-primary hover:border-primary transition-all duration-300 ease-in-out hover:cursor-pointer px-4 py-3 rounded-xl"
-                          key={need.id}
-                          onClick={() => setActiveNeed(need.id)}
-                          type="button"
-                        >
-                          <Icon />
-                          <div className="">{need.title}</div>
-                        </button>
-                      )
-                    })}
-                  </div>
-                </div>
-              )}
 
             {/* Web: question — avez‑vous déjà un site ? */}
             {activeNeed === "web" && (
