@@ -57,18 +57,13 @@ export default function NeedSection() {
 
             {activeNewWeb && activeNewWeb === "vitrine" && (
               <div className="w-full h-full flex flex-col justify-center gap-y-4 bg-background">
-                <div className="flex flex-col md:flex-row md:items-center justify-between">
-                  <h3 className="font-extrabold text-3xl">Offre recommandée</h3>
-                  <BackBtn
-                    onClick={() => {
-                      setActiveNewWeb(null)
-                      setActiveNeed(null)
-                      setActiveWeb(null)
-                    }}
-                  />
-                </div>
                 <BookAFreeCall
                   title="Site vitrine"
+                  onClick={() => {
+                    setActiveNewWeb(null)
+                    setActiveNeed(null)
+                    setActiveWeb(null)
+                  }}
                   paragraph="Valorisez votre activité, attirez plus de demandes et rassurez vos prospects dès la première visite."
                 />
               </div>
@@ -254,6 +249,11 @@ export default function NeedSection() {
                   />
                 </div>
                 <BookAFreeCall
+                  onClick={() => {
+                    setActiveNewWeb(null)
+                    setActiveNeed(null)
+                    setActiveWeb(null)
+                  }}
                   title="Automatisation"
                   paragraph="Automatisez vos processus métier avec des workflows
                     intelligents : devis, signature, facturation, notifications
