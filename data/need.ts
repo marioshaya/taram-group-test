@@ -51,3 +51,9 @@ export const needWebSiteVitrine = [
   "SEO local optimisé et formulaires connectés",
   "Formation vidéo pour être autonome"
 ]
+
+export const needWebEcommerce = [
+  "Catalogue modulable et fiches produits SEO",
+  "Tunnel de commande optimisé mobile",
+  "Email marketing automatisé dès le lancement"
+]

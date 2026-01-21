@@ -4,6 +4,7 @@ import { LiaLongArrowAltRightSolid } from "react-icons/lia"
 import { TfiCheck } from "react-icons/tfi"
 import {
   needAutomationIncludes,
+  needWebEcommerce,
   needWebMaintenance,
   needWebSiteVitrine
 } from "@/data"
@@ -29,6 +30,9 @@ const BookAFreeCall = ({ title, paragraph, onClick }: BookFreeCallIO) => {
         break
       case "Site vitrine":
         includes = needWebSiteVitrine
+        break
+      case "E-commerce":
+        includes = needWebEcommerce
         break
       default:
         includes = []

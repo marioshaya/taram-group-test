@@ -70,6 +70,18 @@ export default function NeedSection() {
               </div>
             )}
 
+            {activeNewWeb && activeNewWeb === "e-commerce" && (
+              <BookAFreeCall
+                title="E-commerce"
+                onClick={() => {
+                  setActiveNewWeb(null)
+                  setActiveNeed(null)
+                  setActiveWeb(null)
+                }}
+                paragraph="Vendez en ligne simplement avec un parcours d'achat fluide, des paiements sécurisés et des campagnes prêtes."
+              />
+            )}
+
             {/* Web sub: new site — création */}
             {activeWeb === "new" && (
               <StepList
@@ -89,7 +101,7 @@ export default function NeedSection() {
                 />
                 <NeedBtn
                   icon="e-commerce"
-                  onClick={() => {}}
+                  onClick={() => setActiveNewWeb("e-commerce")}
                   text="E-commerce"
                 />
                 <NeedBtn icon="saas" onClick={() => {}} text="SaaS" />
