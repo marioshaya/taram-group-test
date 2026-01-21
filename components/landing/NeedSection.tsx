@@ -3,7 +3,12 @@
 import Image from "next/image"
 import { useState } from "react"
 import { needsData } from "@/data"
-import type { ExistingWebType, NeedsIdType, NewWebType } from "@/types"
+import type {
+  ExistingOrNewType,
+  ExistingWebType,
+  NeedsIdType,
+  NewWebType
+} from "@/types"
 import BookAFreeCall from "../buttons/BookAFreeCall"
 import NeedBtn from "../buttons/NeedBtn"
 import PrendreRdvCta from "../buttons/PrendreRdvCta"
@@ -12,10 +17,12 @@ import StepList from "../wrapper/StepList"
 
 export default function NeedSection() {
   const [activeNeed, setActiveNeed] = useState<NeedsIdType | null>(null)
-  const [activeWeb, setActiveWeb] = useState<"existing" | "new" | null>(null)
+  const [activeWeb, setActiveWeb] = useState<ExistingOrNewType>(null)
   const [activeNewWeb, setActiveNewWeb] = useState<NewWebType | null>(null)
   const [activeExistingWeb, setActiveExistingWeb] =
     useState<ExistingWebType | null>(null)
+
+  const [activeMobile, setActiveMobile] = useState<ExistingOrNewType>(null)
 
   return (
     <Section isNotMaxWidth>
