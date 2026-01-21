@@ -9,6 +9,7 @@ import BookAFreeCall from "../buttons/BookAFreeCall"
 import NeedBtn from "../buttons/NeedBtn"
 import PrendreRdvCta from "../buttons/PrendreRdvCta"
 import Section from "../Section"
+import StepList from "../wrapper/StepList"
 
 export default function NeedSection() {
   const [activeNeed, setActiveNeed] = useState<NeedsIdType | null>(null)
@@ -125,36 +126,30 @@ export default function NeedSection() {
 
             {/* Web: question — avez‑vous déjà un site ? */}
             {activeNeed === "web" && (
-              <div className="w-full h-full flex flex-col justify-center gap-y-4 bg-background">
-                <div className="text-2xl font-extrabold text-primary">
-                  Avez-vous déjà un site web ?
-                </div>
-                <div className="text-xl space-y-4">
-                  <NeedBtn
-                    icon="yes"
-                    onClick={() => {
-                      setActiveNeed(null)
-                      setActiveWeb("existing")
-                    }}
-                    text="Oui, j'ai déjà un site"
-                  />
-                  <NeedBtn
-                    icon="no"
-                    onClick={() => {
-                      setActiveWeb("new")
-                      setActiveNeed(null)
-                    }}
-                    text="Non, je souhaite en créer un"
-                  />
-
-                  <BackBtn
-                    onClick={() => {
-                      setActiveNeed(null)
-                      setActiveWeb(null)
-                    }}
-                  />
-                </div>
-              </div>
+              <StepList
+                title="Avez-vous déjà un site web ?"
+                onClick={() => {
+                  setActiveNeed(null)
+                  setActiveWeb(null)
+                }}
+              >
+                <NeedBtn
+                  icon="yes"
+                  onClick={() => {
+                    setActiveNeed(null)
+                    setActiveWeb("existing")
+                  }}
+                  text="Oui, j'ai déjà un site"
+                />
+                <NeedBtn
+                  icon="no"
+                  onClick={() => {
+                    setActiveWeb("new")
+                    setActiveNeed(null)
+                  }}
+                  text="Non, je souhaite en créer un"
+                />
+              </StepList>
             )}
 
             {activeNeed === "mobile" && (
