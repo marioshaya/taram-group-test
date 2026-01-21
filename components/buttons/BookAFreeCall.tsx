@@ -2,7 +2,7 @@ import Image from "next/image"
 import { FaCalendarAlt } from "react-icons/fa"
 import { LiaLongArrowAltRightSolid } from "react-icons/lia"
 import { TfiCheck } from "react-icons/tfi"
-import { needAutomationIncludes } from "@/data"
+import { needAutomationIncludes, needWebMaintenance } from "@/data"
 
 interface BookFreeCallIO {
   title: string
@@ -10,6 +10,23 @@ interface BookFreeCallIO {
 }
 
 const BookAFreeCall = ({ title, paragraph }: BookFreeCallIO) => {
+  const getBookingIncludes = (title: string) => {
+    let includes: string[]
+
+    switch (title) {
+      case "Automatisation":
+        includes = needAutomationIncludes
+        break
+      case "Maintenance":
+        includes = needWebMaintenance
+        break
+      default:
+        includes = []
+    }
+
+    return includes
+  }
+
   return (
     <div className="rounded-2xl p-6 bg-linear-to-r from-primary to-primaryLight space-y-3">
       <div className="bg-white rounded-2xl shadow-2xs px-4 py-4 flex items-center gap-x-4">
@@ -30,7 +47,7 @@ const BookAFreeCall = ({ title, paragraph }: BookFreeCallIO) => {
           Ce qui est inclus
         </h4>
         <div className="rounded-2xl border border-white/30 bg-white/20 p-4 w-full space-y-4">
-          {needAutomationIncludes.map((include) => (
+          {getBookingIncludes(title).map((include) => (
             <div
               className="flex items-center gap-x-4 text-background rounded-full"
               key={include}

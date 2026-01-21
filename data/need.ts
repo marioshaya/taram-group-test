@@ -39,3 +39,15 @@ export const needWebNewIncludes = [
   "Design sur mesure et responsive",
   "Hébergement et maintenance inclus"
 ]
+
+export const needWebMaintenance = [
+  "Surveillance 24/7 et sauvegardes quotidiennes",
+  "Corrections garanties sous 24h ouvrées",
+  "Améliorations régulières et coaching"
+]
+
+export const needWebSiteVitrine = [
+  "Structure claire : accueil, services, avis, contact",
+  "SEO local optimisé et formulaires connectés",
+  "Formation vidéo pour être autonome"
+]
