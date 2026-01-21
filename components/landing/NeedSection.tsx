@@ -101,7 +101,10 @@ export default function NeedSection() {
                 />
                 <NeedBtn
                   icon="e-commerce"
-                  onClick={() => setActiveNewWeb("e-commerce")}
+                  onClick={() => {
+                    setActiveNewWeb("e-commerce")
+                    setActiveWeb(null)
+                  }}
                   text="E-commerce"
                 />
                 <NeedBtn icon="saas" onClick={() => {}} text="SaaS" />
