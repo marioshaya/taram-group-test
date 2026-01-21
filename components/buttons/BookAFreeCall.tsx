@@ -2,7 +2,11 @@ import Image from "next/image"
 import { FaCalendarAlt } from "react-icons/fa"
 import { LiaLongArrowAltRightSolid } from "react-icons/lia"
 import { TfiCheck } from "react-icons/tfi"
-import { needAutomationIncludes, needWebMaintenance } from "@/data"
+import {
+  needAutomationIncludes,
+  needWebMaintenance,
+  needWebSiteVitrine
+} from "@/data"
 
 interface BookFreeCallIO {
   title: string
@@ -20,6 +24,9 @@ const BookAFreeCall = ({ title, paragraph }: BookFreeCallIO) => {
       case "Maintenance":
         includes = needWebMaintenance
         break
+      case "Site vitrine":
+        includes = needWebSiteVitrine
+        break
       default:
         includes = []
     }
@@ -33,7 +40,10 @@ const BookAFreeCall = ({ title, paragraph }: BookFreeCallIO) => {
         <div className="border border-primary/50 rounded-2xl bg-primary/10 w-16 h-16 flex items-center justify-center shadow-xl p-2">
           <Image
             className=""
-            src={`/${title.toLowerCase()}.png`}
+            src={`/${title
+              .toLowerCase()
+              .replace(/[^a-z0-9]+/g, "-")
+              .replace(/(^-|-$)/g, "")}.png`}
             height={32}
             width={32}
             alt={title}

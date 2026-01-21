@@ -1,12 +1,22 @@
-import { FaTools } from "react-icons/fa"
+import { FaDesktop, FaTools } from "react-icons/fa"
 import {
   FaArrowRotateRight,
   FaBug,
+  FaCartShopping,
   FaCircleCheck,
-  FaCirclePlus
+  FaCirclePlus,
+  FaCloud
 } from "react-icons/fa6"
 
-type Icon = "yes" | "no" | "tool" | "bug" | "rebrand"
+type Icon =
+  | "yes"
+  | "no"
+  | "tool"
+  | "bug"
+  | "rebrand"
+  | "vitrine"
+  | "e-commerce"
+  | "saas"
 
 const NeedBtn = ({
   icon,
@@ -28,6 +38,12 @@ const NeedBtn = ({
       return <FaBug />
     } else if (icon === "rebrand") {
       return <FaArrowRotateRight />
+    } else if (icon === "vitrine") {
+      return <FaDesktop />
+    } else if (icon === "e-commerce") {
+      return <FaCartShopping />
+    } else if (icon === "saas") {
+      return <FaCloud />
     }
   }
 
