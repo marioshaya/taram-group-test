@@ -46,6 +46,12 @@ export const needWebMaintenance = [
   "Améliorations régulières et coaching"
 ]
 
+export const needWebDebug = [
+  "Diagnostic et correction sous 48h",
+  "Corrections de bugs critiques prioritaires",
+  "Rapport détaillé des interventions"
+]
+
 export const needWebSiteVitrine = [
   "Structure claire : accueil, services, avis, contact",
   "SEO local optimisé et formulaires connectés",

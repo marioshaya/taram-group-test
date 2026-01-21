@@ -52,7 +52,10 @@ export default function NeedSection() {
                 />
                 <NeedBtn
                   icon="bug"
-                  onClick={() => {}}
+                  onClick={() => {
+                    setActiveExistingWeb("debug")
+                    setActiveWeb(null)
+                  }}
                   text="Correction de bugs"
                 />
                 <NeedBtn icon="rebrand" onClick={() => {}} text="Refonte" />
@@ -75,6 +78,19 @@ export default function NeedSection() {
                   setActiveWeb(null)
                 }}
                 paragraph="Sécurisez votre site, corrigez les bugs et bénéficiez d'un support réactif par un interlocuteur unique."
+              />
+            )}
+
+            {activeExistingWeb && activeExistingWeb === "debug" && (
+              <BookAFreeCall
+                title="Correction de bugs"
+                onClick={() => {
+                  setActiveExistingWeb(null)
+                  setActiveNewWeb(null)
+                  setActiveNeed(null)
+                  setActiveWeb(null)
+                }}
+                paragraph="Corrigez rapidement les bugs et problèmes techniques de votre site ou application avec un support réactif."
               />
             )}
 
