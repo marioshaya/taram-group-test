@@ -336,6 +336,17 @@ export default function NeedSection() {
               />
             )}
 
+            {activeExistingMobile === "debug" && (
+              <BookAFreeCall
+                title="Correction de bugs"
+                onClick={() => {
+                  setActiveExistingMobile(null)
+                  setActiveMobile(null)
+                }}
+                paragraph="Corrigez rapidement les bugs et problèmes techniques de votre site ou application avec un support réactif."
+              />
+            )}
+
             {activeNeed === "automation" && (
               <BookAFreeCall
                 onClick={() => {
