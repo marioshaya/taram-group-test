@@ -96,65 +96,6 @@ export default function NeedSection() {
                   }}
                 />
               </div>
-              // <div className="w-full h-full flex flex-col justify-center gap-y-4 bg-background">
-              //   <div className="flex flex-col md:flex-row md:items-center justify-between">
-              //     <h3 className="font-extrabold text-3xl">
-              //       Création de site web
-              //     </h3>
-              //     <BackBtn
-              //       onClick={() => {
-              //         setActiveWeb(null)
-              //         setActiveNeed("web")
-              //       }}
-              //     />
-              //   </div>
-              //   <div className="rounded-2xl p-6 bg-linear-to-r from-primary to-primaryLight space-y-3">
-              //     <p className="text-sm text-background/90">
-              //       Un site sur mesure, moderne et responsive pour développer
-              //       votre présence en ligne.
-              //     </p>
-              //     <div className="w-full space-y-2">
-              //       <h4 className="uppercase font-semibold text-background/70">
-              //         Ce qui est inclus
-              //       </h4>
-              //       <div className="rounded-2xl border border-white/30 bg-white/20 p-4 w-full space-y-4">
-              //         {needWebNewIncludes.map((include) => (
-              //           <div
-              //             className="flex items-center gap-x-4 text-background rounded-full"
-              //             key={include}
-              //           >
-              //             <div className="w-6 h-6 text-background border border-white/75 bg-white/40 rounded-full flex items-center justify-center shadow-xl">
-              //               <TfiCheck className="text-xs" />
-              //             </div>
-              //             <div className="font-medium leading-relaxed">
-              //               {include}
-              //             </div>
-              //           </div>
-              //         ))}
-              //       </div>
-              //     </div>
-              //     <button
-              //       className="bg-background shadow-2xl font-extrabold w-full flex items-center justify-center gap-x-3 py-4 rounded-2xl mt-8 hover:scale-105 transition-all ease-in-out duration-300"
-              //       onClick={() => {
-              //         typeof window !== "undefined" &&
-              //           (
-              //             window as unknown as {
-              //               Calendly?: {
-              //                 initPopupWidget?: (o: { url: string }) => void
-              //               }
-              //             }
-              //           ).Calendly?.initPopupWidget?.({
-              //             url: "https://calendly.com/marioshaya/quick-30-minutes-contact-meeting"
-              //           })
-              //       }}
-              //       type="button"
-              //     >
-              //       <FaCalendarAlt />
-              //       <span>Réservez un appel gratuit</span>
-              //       <LiaLongArrowAltRightSolid />
-              //     </button>
-              //   </div>
-              // </div>
             )}
 
             {/* Main: choice among web, mobile, automation — only when not in a sub-flow */}
