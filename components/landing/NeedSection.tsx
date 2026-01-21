@@ -4,7 +4,6 @@ import Image from "next/image"
 import { useState } from "react"
 import { needsData } from "@/data"
 import type { ExistingWebType, NeedsIdType, NewWebType } from "@/types"
-import BackBtn from "../buttons/BackBtn"
 import BookAFreeCall from "../buttons/BookAFreeCall"
 import NeedBtn from "../buttons/NeedBtn"
 import PrendreRdvCta from "../buttons/PrendreRdvCta"
@@ -66,10 +65,13 @@ export default function NeedSection() {
 
             {/* Web sub: existing site — Maintenance, bugs, refonte */}
             {activeWeb === "existing" && (
-              <div className="w-full space-y-2">
-                <h4 className="text-2xl text-primary font-extrabold md:pt-0">
-                  Quelle prestation vous intéresse ?
-                </h4>
+              <StepList
+                title="Quelle prestation vous intéresse ?"
+                onClick={() => {
+                  setActiveWeb(null)
+                  setActiveNeed("web")
+                }}
+              >
                 <NeedBtn
                   icon="tool"
                   onClick={() => {
@@ -94,13 +96,7 @@ export default function NeedSection() {
                   }}
                   text="Refonte"
                 />
-                <BackBtn
-                  onClick={() => {
-                    setActiveWeb(null)
-                    setActiveNeed("web")
-                  }}
-                />
-              </div>
+              </StepList>
             )}
 
             {activeExistingWeb && activeExistingWeb === "maintenance" && (
@@ -142,6 +138,42 @@ export default function NeedSection() {
               />
             )}
 
+            {/* Web sub: new site — création */}
+            {activeWeb === "new" && (
+              <StepList
+                title="Création de site web"
+                onClick={() => {
+                  setActiveWeb(null)
+                  setActiveNeed("web")
+                }}
+              >
+                <NeedBtn
+                  icon="vitrine"
+                  onClick={() => {
+                    setActiveNewWeb("vitrine")
+                    setActiveWeb(null)
+                  }}
+                  text="Site Vitrine"
+                />
+                <NeedBtn
+                  icon="e-commerce"
+                  onClick={() => {
+                    setActiveNewWeb("e-commerce")
+                    setActiveWeb(null)
+                  }}
+                  text="E-commerce"
+                />
+                <NeedBtn
+                  icon="saas"
+                  onClick={() => {
+                    setActiveNewWeb("saas")
+                    setActiveWeb(null)
+                  }}
+                  text="SaaS"
+                />
+              </StepList>
+            )}
+
             {activeNewWeb && activeNewWeb === "vitrine" && (
               <div className="w-full h-full flex flex-col justify-center gap-y-4 bg-background">
                 <BookAFreeCall
@@ -178,42 +210,6 @@ export default function NeedSection() {
                 }}
                 paragraph="Développez votre solution SaaS innovante avec une équipe qui gère design, produit, développement et suivi."
               />
-            )}
-
-            {/* Web sub: new site — création */}
-            {activeWeb === "new" && (
-              <StepList
-                title="Création de site web"
-                onClick={() => {
-                  setActiveWeb(null)
-                  setActiveNeed("web")
-                }}
-              >
-                <NeedBtn
-                  icon="vitrine"
-                  onClick={() => {
-                    setActiveNewWeb("vitrine")
-                    setActiveWeb(null)
-                  }}
-                  text="Site Vitrine"
-                />
-                <NeedBtn
-                  icon="e-commerce"
-                  onClick={() => {
-                    setActiveNewWeb("e-commerce")
-                    setActiveWeb(null)
-                  }}
-                  text="E-commerce"
-                />
-                <NeedBtn
-                  icon="saas"
-                  onClick={() => {
-                    setActiveNewWeb("saas")
-                    setActiveWeb(null)
-                  }}
-                  text="SaaS"
-                />
-              </StepList>
             )}
 
             {/* Web: question — avez‑vous déjà un site ? */}
