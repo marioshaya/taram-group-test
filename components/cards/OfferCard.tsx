@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import { FaCalendarAlt } from "react-icons/fa"
 import { LiaLongArrowAltRightSolid } from "react-icons/lia"
