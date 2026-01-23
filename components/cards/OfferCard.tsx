@@ -2,12 +2,8 @@ import Image from "next/image"
 import { FaCalendarAlt } from "react-icons/fa"
 import { LiaLongArrowAltRightSolid } from "react-icons/lia"
 import { TfiCheck } from "react-icons/tfi"
+import type { OfferCardProps } from "@/types"
 import { getBookingIncludes, slugify } from "@/utils"
-
-interface OfferCardProps {
-  title: string
-  paragraph: string
-}
 
 const OfferCard = ({ title, paragraph }: OfferCardProps) => {
   const getImage = (title: string) => {
