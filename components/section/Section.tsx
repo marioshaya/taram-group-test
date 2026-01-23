@@ -1,15 +1,7 @@
 import clsx from "clsx"
-import type { ReactNode } from "react"
+import type { SectionProps } from "@/types"
 
-const Section = ({
-  children,
-  height,
-  isNotMaxWidth
-}: {
-  children: ReactNode
-  height?: string
-  isNotMaxWidth?: boolean
-}) => {
+const Section = ({ children, height, isNotMaxWidth }: SectionProps) => {
   return (
     <section
       className={clsx(
