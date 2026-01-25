@@ -1,5 +1,6 @@
 import Image from "next/image"
-import { guideFilter } from "@/data"
+import GuideCard from "@/components/cards/GuideCard"
+import { guideFilter, guidesData } from "@/data"
 
 const GuidesPage = () => {
   return (
@@ -53,6 +54,18 @@ const GuidesPage = () => {
             >
               {guide}
             </button>
+          ))}
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {guidesData.map((gd) => (
+            <GuideCard
+              category={gd.category}
+              date={gd.date}
+              readLenghtInMinute={gd.readLenghtInMinute}
+              key={gd.title}
+              title={gd.title}
+              intro={gd.intro}
+            />
           ))}
         </div>
       </div>

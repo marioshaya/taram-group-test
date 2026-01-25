@@ -6,6 +6,14 @@ export interface BookAFreeCallProps {
   onClick: () => void
 }
 
+export interface GuideCardProps {
+  title: string
+  category: string
+  intro: string
+  date: string
+  readLenghtInMinute: number
+}
+
 export interface OfferCardProps {
   title: string
   paragraph: string
