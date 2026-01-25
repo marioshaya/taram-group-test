@@ -1,8 +1,4 @@
-"use client"
-
 import Image from "next/image"
-import { FaCalendarAlt } from "react-icons/fa"
-import { LiaLongArrowAltRightSolid } from "react-icons/lia"
 import { TfiCheck } from "react-icons/tfi"
 import type { OfferCardProps } from "@/types"
 import { getBookingIncludes, slugify } from "@/utils"
@@ -44,26 +40,6 @@ const OfferCard = ({ title, paragraph }: OfferCardProps) => {
           ))}
         </div>
       </div>
-      <button
-        className="bg-background shadow-2xl font-extrabold w-full flex items-center justify-center gap-x-3 py-4 rounded-2xl mt-8 hover:scale-105 transition-all ease-in-out duration-300"
-        onClick={() => {
-          typeof window !== "undefined" &&
-            (
-              window as unknown as {
-                Calendly?: {
-                  initPopupWidget?: (o: { url: string }) => void
-                }
-              }
-            ).Calendly?.initPopupWidget?.({
-              url: "https://calendly.com/marioshaya/quick-30-minutes-contact-meeting"
-            })
-        }}
-        type="button"
-      >
-        <FaCalendarAlt />
-        <span>Réservez un appel gratuit</span>
-        <LiaLongArrowAltRightSolid />
-      </button>
     </GreenCardWrapper>
   )
 }
