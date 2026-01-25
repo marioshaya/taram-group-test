@@ -1,6 +1,12 @@
 import type { GuideCardProps } from "@/types"
 
-const GuideCard = ({ title, category, date, intro }: GuideCardProps) => {
+const GuideCard = ({
+  title,
+  category,
+  date,
+  intro,
+  readLenghtInMinute
+}: GuideCardProps) => {
   return (
     <div
       className="flex flex-col gap-y-4 rounded-2xl text-background p-6 hover:scale-105 transition-all ease-in-out duration-500"
@@ -16,8 +22,10 @@ const GuideCard = ({ title, category, date, intro }: GuideCardProps) => {
           {category.charAt(0)}
         </div>
         <div className="">
-          <div className="">{category}</div>
-          <div className="text-xs opacity-80">{date}</div>
+          <div className="font-[1000] text-2xl">{category}</div>
+          <div className="text-xs opacity-80">
+            {readLenghtInMinute}min - {date}
+          </div>
         </div>
       </div>
       <div className="text-xl font-extrabold">{title}</div>
