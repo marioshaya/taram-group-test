@@ -8,9 +8,11 @@ const ProjectsPage = () => {
     <main>
       <PortfolioSection />
       <Section>
-        <h2 className="text-3xl font-extrabold text-center pb-6">
-          Besoin d&apos;un <u className="text-primary text-4xl">boost</u> de{" "}
-          <span className="text-primary text-4xl">visibilité</span> ?
+        <h2 className="text-3xl font-extrabold text-center pb-6 sm:text-4xl">
+          Besoin d&apos;un{" "}
+          <u className="text-primary text-4xl sm:text-5xl">boost</u> de{" "}
+          <span className="text-primary text-4xl sm:text-5xl">visibilité</span>{" "}
+          ?
         </h2>
         <div className="flex flex-col md:flex-row text-background">
           <div className="w-full flex items-center justify-center">
