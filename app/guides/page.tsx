@@ -1,0 +1,63 @@
+import Image from "next/image"
+import { guideFilter } from "@/data"
+
+const GuidesPage = () => {
+  return (
+    <main>
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-4">
+        <Image
+          className="w-auto h-auto rounded-2xl max-w-[80px] sm:max-w-none"
+          src="/guide-question.png"
+          alt="Guide"
+          width={120}
+          height={60}
+        />
+        <h2 className="text-center text-4xl sm:text-5xl font-bold">
+          Guides & FAQ
+        </h2>
+        <div className="w-full relative">
+          <div className="absolute top-3.5 left-4 z-20">
+            <Image
+              className=""
+              src="/search.png"
+              width={32}
+              height={32}
+              alt="Recherche"
+            />
+          </div>
+          <input
+            placeholder="Rechercher un guide, un sujet, une question..."
+            className="w-full pl-16 py-4 rounded-3xl text-black placeholder:text-black/50 focus:outline-none transition-all text-sm sm:text-lg font-medium relative"
+            style={{
+              background:
+                "linear-gradient(135deg, rgb(250, 250, 250) 0%, rgb(230, 230, 230) 25%, rgb(207, 207, 207) 50%, rgb(184, 184, 184) 75%, rgb(158, 158, 158) 100%)",
+              boxShadow:
+                "rgba(158, 158, 158, 0.4) 0px 20px 60px, rgba(255, 255, 255, 0.6) 0px 1px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px inset",
+              border: "1px solid rgba(255, 255, 255, 0.3)"
+            }}
+            type="text"
+          />
+        </div>
+        <div className="flex flex-wrap gap-2 justify-center">
+          {guideFilter.map((guide) => (
+            <button
+              className="px-6 py-2 rounded-xl text-sm font-semibold transition-all relative overflow-hidden border border-background/30 text-background opacity-70"
+              style={{
+                background:
+                  "linear-gradient(135deg, #FAFAFA 0%, #E6E6E6 25%, #CFCFCF 50%, #B8B8B8 75%, #9E9E9E 100%)",
+                boxShadow:
+                  "0 10px 30px rgba(160, 160, 160, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 -1px 0 rgba(0, 0, 0, 0.1)"
+              }}
+              type="button"
+              key={guide}
+            >
+              {guide}
+            </button>
+          ))}
+        </div>
+      </div>
+    </main>
+  )
+}
+
+export default GuidesPage

@@ -1,6 +1,7 @@
 export * from "./contactData"
 export * from "./difference"
 export * from "./faqData"
+export * from "./guideFilter"
 export * from "./legalLinks"
 export * from "./navLinks"
 export * from "./need"
