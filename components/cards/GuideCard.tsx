@@ -3,7 +3,7 @@ import type { GuideCardProps } from "@/types"
 const GuideCard = ({ title, category, date, intro }: GuideCardProps) => {
   return (
     <div
-      className="flex flex-col gap-y-4 rounded-2xl text-background p-6"
+      className="flex flex-col gap-y-4 rounded-2xl text-background p-6 hover:scale-105 transition-all ease-in-out duration-500"
       style={{
         background:
           "linear-gradient(135deg, rgb(250, 250, 250) 0%, rgb(230, 230, 230) 25%, rgb(207, 207, 207) 50%, rgb(184, 184, 184) 75%, rgb(158, 158, 158) 100%)",
