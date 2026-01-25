@@ -60,6 +60,12 @@ export default function Navbar() {
           className={`bg-background flex shrink-0 items-center justify-center rounded-xl transition-[width,height] duration-200 ease-out ${
             isScrolled ? "h-10 w-10" : "h-12 w-12"
           }`}
+          onClick={() => {
+            // @ts-expect-error
+            Calendly.initPopupWidget({
+              url: "https://calendly.com/marioshaya/quick-30-minutes-contact-meeting"
+            })
+          }}
           type="button"
         >
           <FaCalendarAlt />
