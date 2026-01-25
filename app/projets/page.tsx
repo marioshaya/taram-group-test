@@ -17,6 +17,7 @@ const ProjectsPage = () => {
         <div className="flex flex-col md:flex-row text-background">
           <div className="w-full flex items-center justify-center">
             <Image
+              className="animate-bounce"
               src="/popcorn-bot.png"
               width={320}
               height={240}
