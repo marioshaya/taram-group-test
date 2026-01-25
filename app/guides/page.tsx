@@ -1,7 +1,9 @@
 import Image from "next/image"
+import Link from "next/link"
 import GuideCard from "@/components/cards/GuideCard"
 import Section from "@/components/section/Section"
 import { guideFilter, guidesData } from "@/data"
+import { slugify } from "@/utils"
 
 const GuidesPage = () => {
   return (
@@ -61,14 +63,15 @@ const GuidesPage = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {guidesData.map((gd) => (
-            <GuideCard
-              category={gd.category}
-              date={gd.date}
-              readLenghtInMinute={gd.readLenghtInMinute}
-              key={gd.title}
-              title={gd.title}
-              intro={gd.intro}
-            />
+            <Link href={`/guides/${slugify(gd.title)}`} key={gd.title}>
+              <GuideCard
+                category={gd.category}
+                date={gd.date}
+                readLenghtInMinute={gd.readLenghtInMinute}
+                title={gd.title}
+                intro={gd.intro}
+              />
+            </Link>
           ))}
         </div>
       </Section>
